@@ -13,10 +13,10 @@ As AI tooling becomes more prevalent across creative, professional, and personal
 
 ## Goals
 
-1. **Prompt meaningful self-reflection** — at least 70% of visitors complete the full rating exercise (not just one or two domains).
-2. **Deliver a personalized insight** — every visitor receives a unique, shareable summary of their own AI attitude profile upon completion.
-3. **Make aggregate data legible** — visitors can compare their ratings to the broader pool in a way that surfaces genuine surprise or validation ("I'm more skeptical than most people my age").
-4. **Educate through exposure** — visitors who complete the experience can name at least 3 AI use cases they hadn't previously considered (validated via optional post-experience prompt).
+1. **Educate through exposure** — visitors who complete the experience can name at least 3 AI use cases they hadn't previously considered (validated via optional post-experience prompt).
+2. **Prompt meaningful self-reflection** — at least 70% of visitors complete the full rating exercise (not just one or two domains).
+3. **Deliver a personalized insight** — every visitor receives a unique, shareable summary of their own AI attitude profile upon completion.
+4. **Make aggregate data legible** — visitors can compare their ratings to the broader pool in a way that surfaces genuine surprise or validation ("I'm more skeptical than most people my age").
 5. **Drive social sharing** — at least 20% of completers share their individual results or the aggregate visualization externally.
 
 ---
