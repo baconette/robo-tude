@@ -1,0 +1,55 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Feature 2 user flow: Individual Results Visualization</title>
+<desc>From bundle ratings complete, through computing and rendering the attitude profile within 2 seconds, to viewing individual use-case ratings on demand.</desc>
+<defs>
+<marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#5F5E5A"/>
+</marker>
+</defs>
+<style>
+.box { fill: #FFFFFF; stroke: #D3D1C7; stroke-width:1.5; }
+.system { fill: #F1EFE8; stroke: #D3D1C7; stroke-width:1.5; }
+.end { fill: #FFFFFF; stroke: #2C2C2A; stroke-width:2; }
+.entry { fill: #2C2C2A; }
+.title { font-size:14px; font-weight:600; fill: #2C2C2A; font-family: Arial, sans-serif; }
+.sub { font-size:11px; fill: #5F5E5A; font-family: Arial, sans-serif; }
+.label { font-size:11px; fill: #5F5E5A; font-family: Arial, sans-serif; }
+.entrylabel { font-size:12px; font-weight:600; fill: #FFFFFF; font-family: Arial, sans-serif; }
+.edge { stroke: #5F5E5A; stroke-width:1.5; fill:none; marker-end:url(#arrow3); }
+</style>
+
+<ellipse cx="150" cy="50" rx="120" ry="28" class="entry"/>
+<text x="150" y="45" text-anchor="middle" class="entrylabel">Bundle ratings</text>
+<text x="150" y="60" text-anchor="middle" class="entrylabel">complete (Feature 1)</text>
+<path class="edge" d="M270,50 L340,50"/>
+
+<rect x="340" y="20" width="200" height="60" class="system"/>
+<text x="440" y="45" text-anchor="middle" class="title">Computes profile</text>
+<text x="440" y="62" text-anchor="middle" class="sub">must resolve &lt; 2 seconds</text>
+
+<path class="edge" d="M440,80 L440,120"/>
+
+<rect x="320" y="120" width="240" height="70" class="box"/>
+<text x="440" y="148" text-anchor="middle" class="title">Results visualization</text>
+<text x="440" y="165" text-anchor="middle" class="sub">reflects cumulative bundles rated</text>
+<text x="440" y="180" text-anchor="middle" class="sub">visual form: open question</text>
+
+<path class="edge" d="M440,190 L440,230"/>
+
+<rect x="290" y="230" width="300" height="60" class="box"/>
+<text x="440" y="255" text-anchor="middle" class="title">Views individual use-case rating</text>
+<text x="440" y="272" text-anchor="middle" class="sub">on demand — tap/expand from the profile</text>
+
+<path class="edge" d="M440,230 C300,210 300,190 320,190" stroke-dasharray="4,3"/>
+<text x="180" y="205" class="label">optional, doesn't block</text>
+
+<path class="edge" d="M440,290 L440,330"/>
+
+<ellipse cx="440" cy="380" rx="150" ry="34" class="end"/>
+<text x="440" y="376" text-anchor="middle" class="title">Views full individual results</text>
+<text x="440" y="393" text-anchor="middle" class="sub">to Feature 3 — Aggregate (out of scope)</text>
+
+<rect x="60" y="480" width="16" height="16" class="system"/>
+<text x="86" y="492" class="label">system process</text>
+<text x="60" y="530" class="sub">Resolved: results always reflect cumulative ratings across every bundle completed so far, not a per-bundle snapshot.</text>
+</svg>
