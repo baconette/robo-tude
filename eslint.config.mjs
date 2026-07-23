@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Deno Edge Function code — separate runtime, not part of this lint config.
+    "supabase/functions/**",
   ]),
 ]);
 

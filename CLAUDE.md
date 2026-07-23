@@ -17,6 +17,16 @@ The Next.js app is scaffolded (App Router, TypeScript, Tailwind) with Supabase, 
 
 There is no test suite configured yet.
 
+## Supabase + Notion sync (built)
+
+- `src/lib/supabase/client.ts` / `server.ts` — typed `SupabaseClient<Database>` factories (browser and server). No `@supabase/ssr`/cookie auth — visitors are anonymous, so a plain anon-key client is sufficient on both sides. `server.ts` is guarded with `server-only`.
+- `src/lib/supabase/types.ts` — generated via `npx supabase gen types typescript --linked`; regenerate after any schema change.
+- Content tables (`domains`, `use_cases`) already existed in the linked Supabase project before this work started — schema is **not** the uuid-surrogate-key design you might expect from a from-scratch design. Both tables are keyed directly by `notion_id` (the Notion page ID), and `use_cases.domain_id` is a text FK straight to `domains.notion_id` — no separate lookup/join table. `domains` has no publish gate (it's just a container; a domain with no published use cases simply has nothing to show). `use_cases.published` gates all visitor-facing visibility, enforced by the `"Public can read published use cases"` RLS policy (`using (published = true)`) — anon/authenticated grants are SELECT-only, tightened via migration.
+- `supabase/functions/notion-sync/` — Deno Edge Function that pulls both Notion data sources (Domains, AI-use-cases), upserts into `domains`/`use_cases` by `notion_id`, mirrors domain images into the `domain-images` Storage bucket, and soft-deletes (`published = false`) rows that disappear from Notion — never a hard delete. Deployed with `npx supabase functions deploy notion-sync --use-api` (`--use-api` avoids needing Docker, which isn't installed locally).
+- Scheduled via `pg_cron` + `pg_net` (`supabase/migrations/..._schedule_notion_sync_cron.sql`), daily at 06:00 UTC. Secrets (`NOTION_API_TOKEN`, `NOTION_DOMAINS_DATA_SOURCE_ID`, `NOTION_USE_CASES_DATA_SOURCE_ID`) are set via `npx supabase secrets set` — never in app env files. `SUPABASE_URL`/`SUPABASE_SERVICE_ROLE_KEY` are auto-injected into the function by Supabase.
+- Local dev has no Docker, so the standard `supabase start`/`functions serve` workflow doesn't work here — migrations go straight to the remote project via `npx supabase db push`, and the function is tested by invoking its deployed URL directly rather than serving locally. `supabase/functions logs` isn't available in this CLI version either; verify sync results by querying the tables directly instead.
+- `supabase/functions/notion-sync/**` is excluded from both `tsconfig.json` and `eslint.config.mjs` — it's Deno code (uses `npm:`-specifier imports, `Deno.serve`, `Deno.env`) and isn't type-checked or linted by the Next.js app's tooling.
+
 ## Confirmed tech stack
 
 - **Next.js (App Router) + TypeScript** — server-rendered pages are required so shared results URLs can set per-visitor OG meta tags (Twitter/X, Instagram, iMessage previews), which a pure client-rendered SPA can't do.
