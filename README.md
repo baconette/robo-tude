@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Use Case Sentiment Explorer
 
-## Getting Started
+An interactive web experience where visitors rate real-world AI use cases — "should a human or an AI do this?" — and get back a personalized "AI attitude profile" they can compare against friends and the broader visitor pool.
 
-First, run the development server:
+## What this project does
+
+Visitors rate AI use cases (103 at launch, organized into domains and subdomains) on a 1–5 scale from *Never* to *Always* a human should do it instead of AI. Ratings are served in randomized bundles of 10 so the experience feels like a continuous stream rather than a category-by-category survey. After each bundle, visitors see a personalized results visualization, can compare it against a friend's shared results or an aggregate of all visitors, and can share their own results as a unique link.
+
+## Why this project is useful
+
+Conversations about AI's role in creative, professional, and personal life tend to stay abstract and polarized. This app gives people a structured, low-friction way to articulate where *they* personally draw the line between human and AI-performed work, see how that compares to their peers, and discover AI use cases they hadn't considered before — turning an abstract debate into something personal and shareable.
+
+Full product requirements, goals, and acceptance criteria live in [prd.md](prd.md).
+
+## Getting started
+
+This is a [Next.js](https://nextjs.org) app (App Router, TypeScript, Tailwind CSS) backed by Supabase, with use case content synced in from Notion.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other useful commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # run a production build
+npm run lint     # lint
+```
 
-## Learn More
+You'll need Supabase project credentials (ask a maintainer) to run anything beyond the default scaffolded page — see [CLAUDE.md](CLAUDE.md) for the current architecture and stack decisions.
 
-To learn more about Next.js, take a look at the following resources:
+## Where to find help
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [prd.md](prd.md) — product requirements, user stories, and acceptance criteria
+- [CLAUDE.md](CLAUDE.md) — architecture, confirmed tech stack, and conventions for this repo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Maintainers
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project does not yet have a public contribution process; reach out to the repository owner directly with questions.
