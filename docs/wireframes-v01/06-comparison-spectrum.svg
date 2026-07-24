@@ -1,0 +1,218 @@
+<svg viewBox="0 0 900 1300" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wireframe: Comparison visualization — you + your friend (Feature 3)</title>
+<desc>Mid-fi annotated wireframe for Feature 3 (Comparison Visualization), previously marked out of scope — now wireframed per instruction, built on the chosen spectrum concept from 05b-results-spectrum.svg. Default view is the sharer/friend comparison; an "Everyone" tab covers the aggregate view gated by the 25-respondent threshold (PRD Requirement 3).</desc>
+<style>
+.frame { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.box { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.dynamicbox { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.ximg { fill:#F6F5F1; stroke:#B9B7AC; stroke-width:1.5; }
+.ximgline { stroke:#B9B7AC; stroke-width:1.5; }
+.label { font-size:11.5px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.endlabel { font-size:9.5px; font-weight:700; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:0.4px; }
+.title { font-size:15px; font-weight:600; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.archlabel { font-size:8.5px; font-weight:700; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:0.4px; }
+.archname { font-size:11px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.tabactive { fill:#2C2C2A; }
+.tabactivetext { fill:#FFFFFF; font-size:12px; font-weight:600; font-family: Arial, sans-serif; }
+.tabinactive { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.tabinactivetext { fill:#5F5E5A; font-size:12px; font-weight:600; font-family: Arial, sans-serif; }
+.track { stroke:#D3D1C7; stroke-width:3; stroke-linecap:round; }
+.tick { stroke:#D3D1C7; stroke-width:1.5; }
+.connector { stroke:#B9B7AC; stroke-width:1.5; }
+.markeryou { fill:#2C2C2A; }
+.markerfriend { fill:#F1EFE8; stroke:#2C2C2A; stroke-width:2; }
+.btn { fill:#2C2C2A; }
+.btntext { fill:#FFFFFF; font-size:14px; font-weight:600; font-family: Arial, sans-serif; }
+.link { fill:#5F5E5A; font-size:12px; font-family: Arial, sans-serif; text-decoration:underline; }
+.impacticon { fill:#FFFFFF; fill-opacity:0.15; }
+.impacticontext { fill:#FFFFFF; font-size:13px; font-weight:700; font-family: Arial, sans-serif; }
+.impactsub { fill:#B9B7AC; font-size:10px; font-family: Arial, sans-serif; }
+.state-title { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.callout { fill:#2C2C2A; }
+.callouttext { fill:#FFFFFF; font-size:11px; font-weight:700; font-family: Arial, sans-serif; }
+.leader { stroke:#B9B7AC; stroke-width:1; stroke-dasharray:2,2; }
+.legend-title { font-size:13px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.legend-text { font-size:12px; fill:#3A3A38; font-family: Arial, sans-serif; }
+.legend-num { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+</style>
+
+<!-- ============ MAIN: friend comparison (default) ============ -->
+<rect x="40" y="40" width="350" height="720" rx="26" class="frame"/>
+
+<!-- back, top-left — same pattern/position as 03-rating-card.svg's back button -->
+<text x="66" y="82" class="title" font-size="13">← Back</text>
+
+<text x="66" y="112" class="title">You + your friend</text>
+
+<!-- tabs -->
+<rect x="66" y="130" width="145" height="28" rx="14" class="tabactive"/>
+<text x="138.5" y="149" text-anchor="middle" class="tabactivetext">Friend</text>
+<rect x="219" y="130" width="145" height="28" rx="14" class="tabinactive"/>
+<text x="291.5" y="149" text-anchor="middle" class="tabinactivetext">Everyone</text>
+
+<!-- compact archetype cards, you + friend -->
+<rect x="66" y="178" width="143" height="96" rx="8" class="dynamicbox"/>
+<rect x="78" y="190" width="36" height="36" rx="8" class="ximg"/>
+<line x1="78" y1="190" x2="114" y2="226" class="ximgline"/>
+<line x1="114" y1="190" x2="78" y2="226" class="ximgline"/>
+<text x="122" y="202" class="archlabel">YOU</text>
+<text x="122" y="216" class="archname" font-size="10">THE OPEN LEDGER</text>
+<text x="78" y="254" class="label" font-size="9.5">Leans AI most on money</text>
+<text x="78" y="266" class="label" font-size="9.5">&amp; finances decisions</text>
+
+<rect x="221" y="178" width="143" height="96" rx="8" class="dynamicbox"/>
+<rect x="233" y="190" width="36" height="36" rx="8" class="ximg"/>
+<line x1="233" y1="190" x2="269" y2="226" class="ximgline"/>
+<line x1="269" y1="190" x2="233" y2="226" class="ximgline"/>
+<text x="277" y="202" class="archlabel">YOUR FRIEND</text>
+<text x="277" y="216" class="archname" font-size="10">THE BACKSEAT DRIVER</text>
+<text x="233" y="254" class="label" font-size="9.5">Wants a human hand on</text>
+<text x="233" y="266" class="label" font-size="9.5">the wheel for mobility</text>
+
+<!-- insight line, now sitting where the section header used to be -->
+<text x="66" y="296" class="label" font-style="italic">You agree most on Creative · diverge most on Mobility</text>
+
+<!-- sort control: default sorts most-agreement-first, tap to reverse -->
+<rect x="194" y="308" width="170" height="22" rx="11" class="tabinactive"/>
+<text x="279" y="323" text-anchor="middle" class="tabinactivetext" font-size="10.5">Most agreement first ⇅</text>
+
+<!-- marker legend key, placed right before the first domain row -->
+<circle cx="72" cy="346" r="6" class="markeryou"/>
+<text x="84" y="350" class="label">You</text>
+<circle cx="130" cy="346" r="6" class="markerfriend"/>
+<text x="142" y="350" class="label">Your friend</text>
+
+<!-- comparison rows: two markers per domain — sorted most-agreement (smallest gap) first -->
+<g>
+<text x="66" y="368" class="title" font-size="12">Creative</text>
+<text x="66" y="384" class="endlabel">HUMAN</text>
+<text x="364" y="384" text-anchor="end" class="endlabel">AI</text>
+<line x1="66" y1="394" x2="364" y2="394" class="track"/>
+<line x1="66" y1="388" x2="66" y2="400" class="tick"/>
+<line x1="140.5" y1="388" x2="140.5" y2="400" class="tick"/>
+<line x1="215" y1="388" x2="215" y2="400" class="tick"/>
+<line x1="289.5" y1="388" x2="289.5" y2="400" class="tick"/>
+<line x1="364" y1="388" x2="364" y2="400" class="tick"/>
+<line x1="255" y1="394" x2="262" y2="394" class="connector"/>
+<circle cx="255" cy="394" r="9" class="markeryou"/>
+<circle cx="262" cy="394" r="9" class="markerfriend"/>
+</g>
+
+<g>
+<text x="66" y="440" class="title" font-size="12">Healthcare</text>
+<line x1="66" y1="466" x2="364" y2="466" class="track"/>
+<line x1="66" y1="460" x2="66" y2="472" class="tick"/>
+<line x1="140.5" y1="460" x2="140.5" y2="472" class="tick"/>
+<line x1="215" y1="460" x2="215" y2="472" class="tick"/>
+<line x1="289.5" y1="460" x2="289.5" y2="472" class="tick"/>
+<line x1="364" y1="460" x2="364" y2="472" class="tick"/>
+<line x1="278" y1="466" x2="298" y2="466" class="connector"/>
+<circle cx="278" cy="466" r="9" class="markeryou"/>
+<circle cx="298" cy="466" r="9" class="markerfriend"/>
+</g>
+
+<g>
+<text x="66" y="512" class="title" font-size="12">Education</text>
+<line x1="66" y1="538" x2="364" y2="538" class="track"/>
+<line x1="66" y1="532" x2="66" y2="544" class="tick"/>
+<line x1="140.5" y1="532" x2="140.5" y2="544" class="tick"/>
+<line x1="215" y1="532" x2="215" y2="544" class="tick"/>
+<line x1="289.5" y1="532" x2="289.5" y2="544" class="tick"/>
+<line x1="364" y1="532" x2="364" y2="544" class="tick"/>
+<line x1="200" y1="538" x2="230" y2="538" class="connector"/>
+<circle cx="200" cy="538" r="9" class="markeryou"/>
+<circle cx="230" cy="538" r="9" class="markerfriend"/>
+</g>
+
+<g>
+<text x="66" y="584" class="title" font-size="12">Mobility</text>
+<line x1="66" y1="610" x2="364" y2="610" class="track"/>
+<line x1="66" y1="604" x2="66" y2="616" class="tick"/>
+<line x1="140.5" y1="604" x2="140.5" y2="616" class="tick"/>
+<line x1="215" y1="604" x2="215" y2="616" class="tick"/>
+<line x1="289.5" y1="604" x2="289.5" y2="616" class="tick"/>
+<line x1="364" y1="604" x2="364" y2="616" class="tick"/>
+<line x1="210" y1="610" x2="108" y2="610" class="connector"/>
+<circle cx="210" cy="610" r="9" class="markeryou"/>
+<circle cx="108" cy="610" r="9" class="markerfriend"/>
+</g>
+
+<!-- prominent CTA: AI impact explainer (Feature 5, P1) -->
+<rect x="66" y="632" width="298" height="58" rx="8" class="btn"/>
+<circle cx="100" cy="661" r="16" class="impacticon"/>
+<text x="100" y="666" text-anchor="middle" class="impacticontext">i</text>
+<text x="126" y="656" class="btntext" font-size="13.5">Learn more about AI's impact →</text>
+<text x="126" y="674" class="impactsub">Jobs · Economy · Health · Industry</text>
+
+<!-- callouts -->
+<circle cx="400" cy="82" r="10" class="callout"/><text x="400" y="86" text-anchor="middle" class="callouttext">1</text>
+<line x1="390" y1="82" x2="368" y2="82" class="leader"/>
+
+<circle cx="400" cy="144" r="10" class="callout"/><text x="400" y="148" text-anchor="middle" class="callouttext">2</text>
+<line x1="390" y1="144" x2="364" y2="144" class="leader"/>
+
+<circle cx="400" cy="226" r="10" class="callout"/><text x="400" y="230" text-anchor="middle" class="callouttext">3</text>
+<line x1="390" y1="226" x2="364" y2="226" class="leader"/>
+
+<circle cx="400" cy="296" r="10" class="callout"/><text x="400" y="300" text-anchor="middle" class="callouttext">4</text>
+<line x1="390" y1="296" x2="330" y2="296" class="leader"/>
+
+<circle cx="400" cy="319" r="10" class="callout"/><text x="400" y="323" text-anchor="middle" class="callouttext">5</text>
+<line x1="390" y1="319" x2="364" y2="319" class="leader"/>
+
+<circle cx="400" cy="346" r="10" class="callout"/><text x="400" y="350" text-anchor="middle" class="callouttext">6</text>
+<line x1="390" y1="346" x2="142" y2="346" class="leader"/>
+
+<circle cx="400" cy="394" r="10" class="callout"/><text x="400" y="398" text-anchor="middle" class="callouttext">7</text>
+<line x1="390" y1="394" x2="364" y2="394" class="leader"/>
+
+<circle cx="400" cy="661" r="10" class="callout"/><text x="400" y="665" text-anchor="middle" class="callouttext">8</text>
+<line x1="390" y1="661" x2="364" y2="661" class="leader"/>
+
+<!-- ============ small state: Everyone tab, threshold not met ============ -->
+<text x="452" y="60" class="state-title">State: "Everyone" tab, threshold not met</text>
+<rect x="452" y="72" width="220" height="180" rx="16" class="frame"/>
+<text x="472" y="100" class="title" font-size="13">You vs. everyone</text>
+<rect x="472" y="112" width="90" height="22" rx="11" class="tabinactive"/>
+<text x="517" y="127" text-anchor="middle" class="tabinactivetext" font-size="10">Friend</text>
+<rect x="568" y="112" width="90" height="22" rx="11" class="tabactive"/>
+<text x="613" y="127" text-anchor="middle" class="tabactivetext" font-size="10">Everyone</text>
+<rect x="472" y="150" width="186" height="80" class="box" stroke-dasharray="3,3"/>
+<text x="565" y="178" text-anchor="middle" class="label" font-size="10.5">Aggregate not ready yet</text>
+<text x="565" y="196" text-anchor="middle" class="label" font-size="10.5">12 of 25 responses needed</text>
+<text x="565" y="214" text-anchor="middle" class="label" font-size="10.5">to protect against skew</text>
+<text x="452" y="272" class="label" font-size="10">Per PRD Requirement 3: aggregate</text>
+<text x="452" y="286" class="label" font-size="10">is withheld below a 25-respondent</text>
+<text x="452" y="300" class="label" font-size="10">minimum. Friend comparison has</text>
+<text x="452" y="314" class="label" font-size="10">no such gate — n=1, always shown.</text>
+
+<!-- legend -->
+<text x="40" y="800" class="legend-title">Feature 3 — Comparison Visualization (spectrum concept)</text>
+<line x1="40" y1="812" x2="860" y2="812" stroke="#D3D1C7" stroke-width="1"/>
+
+<text x="40" y="838" class="legend-num">1</text>
+<text x="60" y="838" class="legend-text">Back — top-left, same position and style as the back button on 03-rating-card.svg, so the "how do I leave this screen" pattern stays consistent across the app. Returns to 05b (the visitor's own results), replacing the "Back to my results" text link that previously sat at the bottom of this screen.</text>
+
+<text x="40" y="864" class="legend-num">2</text>
+<text x="60" y="864" class="legend-text">Friend / Everyone tabs — per PRD Requirement 3, friend comparison is the default view; Everyone (aggregate of all visitors) is a second tab, not a separate screen. Switching tabs does not re-fetch the visitor's own data, only the comparison side.</text>
+
+<text x="40" y="890" class="legend-num">3</text>
+<text x="60" y="890" class="legend-text">Compact Archetype Cards, one per person — same component as 05b's own-results header and 02's sharer preview, condensed (icon + name + one short line) to fit two side by side. "Your friend" copy, never a name, consistent with 02.</text>
+
+<text x="40" y="916" class="legend-num">4</text>
+<text x="60" y="916" class="legend-text">"Agree most / diverge most" insight — surfaces the PRD's "feel genuine surprise or validation" goal in one line, right where a section header used to sit. Computation (which domain counts as biggest agreement vs. divergence) is a simple |average-you − average-them| comparison per domain — this is a distinct metric from the archetype standout logic in docs/archetype-logic.md and isn't yet specified there; flagging as an open item for whoever owns that logic next.</text>
+
+<text x="40" y="958" class="legend-num">5</text>
+<text x="60" y="958" class="legend-text">Sort control — the rows below are ordered by the same per-domain agreement metric as annotation 4, ascending: most-agreement (smallest |average-you − average-them| gap) at the top, most-disagreement at the bottom. This is the default; tapping the pill reverses the order to most-disagreement first. State is a simple ascending/descending flag, not a full custom sort — no per-domain manual reordering.</text>
+
+<text x="40" y="1000" class="legend-num">6</text>
+<text x="60" y="1000" class="legend-text">Marker key — solid dark circle = you, outlined circle = the other party. Placed directly above the first domain row rather than up near the tabs, so it reads immediately before the marker pairs it's explaining. Deliberately distinct from the dashed/hollow "empty" marker used in 02-landing-shared-link.svg's teaser (that one meant "not rated yet"; this one is real data for both people).</text>
+
+<text x="40" y="1042" class="legend-num">7</text>
+<text x="60" y="1042" class="legend-text">Comparison row — same track as 05b, now with two markers plus a thin connector line so the gap between the two people reads visually, not just numerically (that visual gap width is exactly what the sort in 5 orders by). No values printed inside markers, consistent with 05b.</text>
+
+<text x="40" y="1068" class="legend-num">8</text>
+<text x="60" y="1068" class="legend-text">"Learn more about AI's impact" — same prominent, full-width CTA as on 05b-results-spectrum.svg, into the P1 Impact Explainer (PRD Requirement 5). Placed after the comparison rows so it doesn't compete with the primary comparison content above it. Entry point only; the explainer screen itself isn't wireframed here.</text>
+
+<text x="40" y="1100" class="legend-text" font-style="italic">Responsive: ≥768px puts the two Archetype Cards and the tab control in a fixed-width column, comparison rows can widen but keep a max track width (~420px) so marker positions stay legible. Accessibility: marker shapes (filled vs. outlined), not color alone, distinguish "you" from "them" — safe for color-blind and grayscale contexts. The sort pill needs a clear focus state and an aria-pressed/aria-label announcing current order, since it's the one control on this screen that changes content order.</text>
+</svg>

@@ -1,0 +1,129 @@
+<svg viewBox="0 0 620 1220" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wireframe: Individual results — concept A, radar/spider chart</title>
+<desc>Mid-fi annotated wireframe for Feature 2 (Individual Results Visualization). Concept A of 3: radar chart per-domain, inspired by the Player Motivation reference in prd.md. Shows archetype header, chart, on-demand per-use-case detail, and comparison/share CTAs, per flow-results-visualization.svg.</desc>
+<style>
+.frame { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.box { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.wavy-h1 { font-size:24px; fill:#2C2C2A; font-family: Arial, sans-serif; letter-spacing:-3px; }
+.wavy-body { font-size:14px; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:-2px; }
+.label { font-size:11.5px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.title { font-size:13px; font-weight:600; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.grid { fill:none; stroke:#D3D1C7; stroke-width:1; }
+.axis { stroke:#D3D1C7; stroke-width:1; }
+.overlay { fill:#2C2C2A; fill-opacity:0.12; stroke:#2C2C2A; stroke-width:2; }
+.axislabel { font-size:9.5px; font-weight:700; fill:#5F5E5A; font-family: Arial, sans-serif; letter-spacing:0.4px; }
+.btn { fill:#2C2C2A; }
+.btntext { fill:#FFFFFF; font-size:14px; font-weight:600; font-family: Arial, sans-serif; }
+.btn-outline { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:1.5; }
+.btn-outline-text { fill:#2C2C2A; font-size:14px; font-weight:600; font-family: Arial, sans-serif; }
+.row { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.rowfill { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.chev { stroke:#5F5E5A; stroke-width:1.5; fill:none; }
+.link { fill:#5F5E5A; font-size:12px; font-family: Arial, sans-serif; text-decoration:underline; }
+.callout { fill:#2C2C2A; }
+.callouttext { fill:#FFFFFF; font-size:11px; font-weight:700; font-family: Arial, sans-serif; }
+.leader { stroke:#B9B7AC; stroke-width:1; stroke-dasharray:2,2; }
+.legend-title { font-size:13px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.legend-text { font-size:12px; fill:#3A3A38; font-family: Arial, sans-serif; }
+.legend-num { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+</style>
+
+<rect x="40" y="40" width="350" height="800" rx="26" class="frame"/>
+
+<!-- header -->
+<text x="215" y="90" text-anchor="middle" class="wavy-h1">∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="215" y="112" text-anchor="middle" class="wavy-body">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+
+<!-- radar chart -->
+<polygon points="215,207 303.4,271.3 269.7,375.2 160.3,375.2 126.6,271.3" class="grid"/>
+<polygon points="215,253 259.7,285.5 242.6,338 187.4,338 170.3,285.5" class="grid"/>
+<polygon points="215,160 348,257 297,413 133,413 82,257" class="grid"/>
+<line x1="215" y1="300" x2="215" y2="160" class="axis"/>
+<line x1="215" y1="300" x2="348" y2="257" class="axis"/>
+<line x1="215" y1="300" x2="297" y2="413" class="axis"/>
+<line x1="215" y1="300" x2="133" y2="413" class="axis"/>
+<line x1="215" y1="300" x2="82" y2="257" class="axis"/>
+<polygon points="215,174 281.6,278.4 272.6,379.3 186.2,339.6 108.5,265.4" class="overlay"/>
+<text x="215" y="150" text-anchor="middle" class="axislabel">CREATIVE</text>
+<text x="358" y="253" text-anchor="start" class="axislabel">WORK</text>
+<text x="309" y="432" text-anchor="middle" class="axislabel">HEALTH</text>
+<text x="121" y="432" text-anchor="middle" class="axislabel">HOME</text>
+<text x="72" y="253" text-anchor="end" class="axislabel">RELATION.</text>
+
+<!-- domain list -->
+<text x="66" y="470" class="label">Your ratings by domain</text>
+
+<rect x="66" y="482" width="298" height="44" class="rowfill"/>
+<text x="82" y="507" class="title" font-size="12">Creative</text>
+<text x="360" y="507" text-anchor="end" class="label">Leans "Human" · 4.1 avg</text>
+<path d="M338,500 l6,7 l-6,7" class="chev" transform="rotate(90 341 507)"/>
+
+<!-- expanded sub-rows -->
+<rect x="82" y="526" width="266" height="30" fill="#FAF9F6" stroke="#EDEBE3" stroke-width="1"/>
+<text x="94" y="546" class="label" font-size="10.5">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="336" y="546" text-anchor="end" class="label" font-size="10.5">5</text>
+<rect x="82" y="556" width="266" height="30" fill="#FAF9F6" stroke="#EDEBE3" stroke-width="1"/>
+<text x="94" y="576" class="label" font-size="10.5">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="336" y="576" text-anchor="end" class="label" font-size="10.5">3</text>
+
+<rect x="66" y="592" width="298" height="44" class="row"/>
+<text x="82" y="617" class="title" font-size="12">Work &amp; productivity</text>
+<text x="360" y="617" text-anchor="end" class="label">Leans "AI" · 2.3 avg</text>
+<path d="M356,610 l6,7 l-6,7" class="chev"/>
+
+<rect x="66" y="644" width="298" height="44" class="row"/>
+<text x="82" y="669" class="title" font-size="12">Health</text>
+<text x="360" y="669" text-anchor="end" class="label">Mixed · 3.0 avg</text>
+<path d="M356,662 l6,7 l-6,7" class="chev"/>
+
+<!-- CTAs -->
+<rect x="66" y="712" width="298" height="50" rx="6" class="btn"/>
+<text x="215" y="742" text-anchor="middle" class="btntext">See how you compare →</text>
+<rect x="66" y="772" width="298" height="46" rx="6" class="btn-outline"/>
+<text x="215" y="800" text-anchor="middle" class="btn-outline-text">Share my results</text>
+<text x="215" y="826" text-anchor="middle" class="link">Rate another bundle</text>
+
+<!-- callouts -->
+<circle cx="400" cy="100" r="10" class="callout"/><text x="400" y="104" text-anchor="middle" class="callouttext">1</text>
+<line x1="390" y1="100" x2="330" y2="100" class="leader"/>
+
+<circle cx="400" cy="290" r="10" class="callout"/><text x="400" y="294" text-anchor="middle" class="callouttext">2</text>
+<line x1="390" y1="290" x2="348" y2="270" class="leader"/>
+
+<circle cx="400" cy="504" r="10" class="callout"/><text x="400" y="508" text-anchor="middle" class="callouttext">3</text>
+<line x1="390" y1="504" x2="364" y2="504" class="leader"/>
+
+<circle cx="400" cy="541" r="10" class="callout"/><text x="400" y="545" text-anchor="middle" class="callouttext">4</text>
+<line x1="390" y1="541" x2="348" y2="541" class="leader"/>
+
+<circle cx="400" cy="737" r="10" class="callout"/><text x="400" y="741" text-anchor="middle" class="callouttext">5</text>
+<line x1="390" y1="737" x2="364" y2="737" class="leader"/>
+
+<circle cx="400" cy="826" r="10" class="callout"/><text x="400" y="830" text-anchor="middle" class="callouttext">6</text>
+<line x1="390" y1="826" x2="330" y2="826" class="leader"/>
+
+<!-- legend -->
+<text x="40" y="880" class="legend-title">Concept A — Radar / spider chart</text>
+<line x1="40" y1="892" x2="580" y2="892" stroke="#D3D1C7" stroke-width="1"/>
+
+<text x="40" y="918" class="legend-num">1</text>
+<text x="60" y="918" class="legend-text">Archetype name + one-liner — priority 1, computed from cumulative ratings (must resolve &lt;2s, skeleton/shimmer while pending per flow-results-visualization.svg). Static logic, dynamic output.</text>
+
+<text x="40" y="944" class="legend-num">2</text>
+<text x="60" y="944" class="legend-text">Radar chart — one axis per domain, one filled polygon = the visitor's profile. Scales with domain count (axes recompute; no redesign needed as domains are added, per PRD's domain-agnostic requirement). Recharts RadarChart.</text>
+
+<text x="40" y="970" class="legend-num">3</text>
+<text x="60" y="970" class="legend-text">Per-domain row — priority 2, shows plain-language lean ("Leans Human/AI") + numeric average. Tap to expand.</text>
+
+<text x="40" y="996" class="legend-num">4</text>
+<text x="60" y="996" class="legend-text">Expanded row — on-demand individual use-case ratings within that domain (flow-results-visualization.svg: "optional, doesn't block"). Collapsed by default; doesn't gate the primary visualization.</text>
+
+<text x="40" y="1022" class="legend-num">5</text>
+<text x="60" y="1022" class="legend-text">"See how you compare" — routes to Feature 3 aggregate/friend comparison (out of scope this iteration, shown here only as the exit point of this screen).</text>
+
+<text x="40" y="1048" class="legend-num">6</text>
+<text x="60" y="1048" class="legend-text">"Rate another bundle" — low-emphasis text link, the continue-rating path that previously lived on a separate bundle-complete decision screen. Now the results screen itself is the single landing point after every bundle: routes back into Feature 1 for a new randomized 10-use-case bundle.</text>
+
+<text x="40" y="1074" class="legend-text" font-style="italic">Pros: single at-a-glance shape communicates the whole profile, matches the explicit Player Motivation reference. Cons: legibility degrades past ~7-8 axes and on narrow mobile widths; overlapping labels need careful truncation as more domains launch.</text>
+<text x="40" y="1100" class="legend-text" font-style="italic">See 05b (per-domain spectrum bars) and 05c (domain gauge cards) for the other two required concepts — same header/list/CTA scaffolding, different central visualization.</text>
+</svg>

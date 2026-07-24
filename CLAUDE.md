@@ -27,6 +27,14 @@ There is no test suite configured yet.
 - Local dev has no Docker, so the standard `supabase start`/`functions serve` workflow doesn't work here — migrations go straight to the remote project via `npx supabase db push`, and the function is tested by invoking its deployed URL directly rather than serving locally. `supabase/functions logs` isn't available in this CLI version either; verify sync results by querying the tables directly instead.
 - `supabase/functions/notion-sync/**` is excluded from both `tsconfig.json` and `eslint.config.mjs` — it's Deno code (uses `npm:`-specifier imports, `Deno.serve`, `Deno.env`) and isn't type-checked or linted by the Next.js app's tooling.
 
+## Prototyping kit (`prototypes/`, isolated)
+
+- `prototypes/` vendors [pendar/prototype-kit](https://github.com/pendar/prototype-kit) verbatim — a static, buildless HTML prototype viewer, unrelated to the Next.js app. It has its own `index.html` viewer, its own directory-scoped Claude skills (`prototypes/.claude/skills/{design-brainstorm,match-design,ux-writing}`), and no `package.json`.
+- **Fully isolated from the app's tooling**: `prototypes/**` is excluded from both `tsconfig.json` and `eslint.config.mjs` (same pattern as `supabase/functions/notion-sync/**`), and it sits outside `src/app` so Next's router never sees it.
+- Local dev: `cd prototypes && ./generate-manifest.sh && python3 -m http.server 8000` — separate port from `npm run dev` (3000), runs alongside it. Re-run `generate-manifest.sh` (and commit the updated `prototypes.json`) whenever a prototype is added or removed.
+- **Hosted feedback link**: `.github/workflows/deploy-prototypes.yml` deploys `prototypes/` to GitHub Pages via GitHub Actions on every push to `main` touching `prototypes/**` (or manual dispatch). This is scoped to the subfolder deliberately — plain "deploy from branch" Pages only supports `/` or `/docs`, which would collide with the app at repo root. Requires the one-time repo setting Settings → Pages → Source: "GitHub Actions" (not yet flipped — do this before relying on the workflow). This is separate from, and does not affect, the app's own deferred Netlify deploy above.
+- **Lifecycle**: expect many disposable prototypes here. When one is chosen, manually port its markup/styling into the `shad-DS` branch's shadcn component work (`src/components/ui/`) — that's a deliberate manual translation step (static HTML → typed React/shadcn), not scripted.
+
 ## Confirmed tech stack
 
 - **Next.js (App Router) + TypeScript** — server-rendered pages are required so shared results URLs can set per-visitor OG meta tags (Twitter/X, Instagram, iMessage previews), which a pure client-rendered SPA can't do.

@@ -1,0 +1,150 @@
+<svg viewBox="0 0 900 1200" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wireframe: Share flow — "Share my results" bottom sheet (Feature 4)</title>
+<desc>Mid-fi annotated wireframe for Feature 4 (Shareable Results Artifact), triggered by "Share my results" on 05b-results-spectrum.svg. Shows the share sheet with the self-contained shareable artifact preview, native share targets, and copy-link action, plus the link-copied confirmation and the cross-platform OG preview states.</desc>
+<style>
+.frame { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.box { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.backdrop { fill:#F6F5F1; }
+.scrim { fill:#000000; fill-opacity:0.4; }
+.sheet { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.handle { fill:#D3D1C7; }
+.label { font-size:11.5px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.title { font-size:14px; font-weight:600; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.artifactcard { fill:#2C2C2A; }
+.ximg { fill:#F1EFE8; stroke:#B9B7AC; stroke-width:1.5; }
+.ximgline { stroke:#B9B7AC; stroke-width:1.5; }
+.archnamewhite { font-size:13px; font-weight:700; fill:#FFFFFF; font-family: Arial, sans-serif; }
+.wavy-white { font-size:12px; fill:#B9B7AC; font-family: Arial, sans-serif; letter-spacing:-2px; }
+.footerwhite { font-size:10px; fill:#B9B7AC; font-family: Arial, sans-serif; }
+.iconcircle { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:1.5; }
+.icontext { font-size:14px; fill:#2C2C2A; font-family: Arial, sans-serif; text-anchor: middle; }
+.urlbox { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.urltext { font-size:11px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.btn { fill:#2C2C2A; }
+.btntext { fill:#FFFFFF; font-size:13px; font-weight:600; font-family: Arial, sans-serif; }
+.toast { fill:#2C2C2A; }
+.toasttext { fill:#FFFFFF; font-size:11px; font-weight:600; font-family: Arial, sans-serif; }
+.state-title { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.chatbubble { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.callout { fill:#2C2C2A; }
+.callouttext { fill:#FFFFFF; font-size:11px; font-weight:700; font-family: Arial, sans-serif; }
+.leader { stroke:#B9B7AC; stroke-width:1; stroke-dasharray:2,2; }
+.legend-title { font-size:13px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.legend-text { font-size:12px; fill:#3A3A38; font-family: Arial, sans-serif; }
+.legend-num { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+</style>
+
+<!-- ============ MAIN: share sheet, open ============ -->
+<rect x="40" y="40" width="350" height="630" rx="26" class="frame"/>
+
+<!-- dimmed backdrop: peek of the results screen behind the sheet -->
+<rect x="40" y="40" width="350" height="170" rx="26" class="backdrop"/>
+<rect x="66" y="60" width="60" height="60" rx="10" class="ximg"/>
+<text x="140" y="82" class="title" font-size="12">YOUR ARCHETYPE</text>
+<text x="140" y="100" class="label" font-size="10">THE BACKSEAT DRIVER</text>
+<rect x="40" y="40" width="350" height="170" rx="26" class="scrim"/>
+
+<!-- bottom sheet -->
+<rect x="40" y="210" width="350" height="380" class="sheet"/>
+<rect x="195" y="222" width="40" height="5" rx="2.5" class="handle"/>
+<text x="66" y="252" class="title">Share your results</text>
+<text x="364" y="250" text-anchor="end" class="label">✕</text>
+
+<!-- shareable artifact card: the actual self-contained OG image — Archetype Card only, no spectrum viz -->
+<rect x="66" y="270" width="298" height="120" rx="10" class="artifactcard"/>
+<rect x="82" y="286" width="48" height="48" rx="8" class="ximg"/>
+<line x1="82" y1="286" x2="130" y2="334" class="ximgline"/>
+<line x1="130" y1="286" x2="82" y2="334" class="ximgline"/>
+<text x="140" y="302" class="archnamewhite">THE BACKSEAT DRIVER</text>
+<text x="140" y="320" class="wavy-white">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="140" y="336" class="wavy-white">∿∿∿∿∿∿∿∿∿</text>
+
+<text x="82" y="368" class="footerwhite">robo-tude · Take the quiz yourself →</text>
+
+<!-- native share targets -->
+<circle cx="104" cy="420" r="22" class="iconcircle"/>
+<text x="104" y="425" class="icontext">💬</text>
+<text x="104" y="454" text-anchor="middle" class="label" font-size="9.5">Messages</text>
+
+<circle cx="176" cy="420" r="22" class="iconcircle"/>
+<text x="176" y="425" class="icontext">𝕏</text>
+<text x="176" y="454" text-anchor="middle" class="label" font-size="9.5">X</text>
+
+<circle cx="248" cy="420" r="22" class="iconcircle"/>
+<text x="248" y="425" class="icontext">◎</text>
+<text x="248" y="454" text-anchor="middle" class="label" font-size="9.5">Instagram</text>
+
+<circle cx="320" cy="420" r="22" class="iconcircle"/>
+<text x="320" y="425" class="icontext">···</text>
+<text x="320" y="454" text-anchor="middle" class="label" font-size="9.5">More</text>
+
+<!-- copy link -->
+<rect x="66" y="480" width="220" height="44" rx="6" class="urlbox"/>
+<text x="80" y="506" class="urltext">robotude.app/r/8f2a1c…</text>
+<rect x="294" y="480" width="70" height="44" rx="6" class="btn"/>
+<text x="329" y="506" text-anchor="middle" class="btntext">Copy</text>
+
+<!-- callouts -->
+<circle cx="400" cy="120" r="10" class="callout"/><text x="400" y="124" text-anchor="middle" class="callouttext">1</text>
+<line x1="390" y1="120" x2="364" y2="120" class="leader"/>
+
+<circle cx="400" cy="224" r="10" class="callout"/><text x="400" y="228" text-anchor="middle" class="callouttext">2</text>
+<line x1="390" y1="224" x2="235" y2="224" class="leader"/>
+
+<circle cx="400" cy="330" r="10" class="callout"/><text x="400" y="334" text-anchor="middle" class="callouttext">3</text>
+<line x1="390" y1="330" x2="364" y2="330" class="leader"/>
+
+<circle cx="400" cy="420" r="10" class="callout"/><text x="400" y="424" text-anchor="middle" class="callouttext">4</text>
+<line x1="390" y1="420" x2="342" y2="420" class="leader"/>
+
+<circle cx="400" cy="502" r="10" class="callout"/><text x="400" y="506" text-anchor="middle" class="callouttext">5</text>
+<line x1="390" y1="502" x2="364" y2="502" class="leader"/>
+
+<!-- ============ small state: link copied ============ -->
+<text x="452" y="60" class="state-title">State: link copied</text>
+<rect x="452" y="72" width="220" height="110" rx="16" class="frame"/>
+<rect x="497" y="88" width="130" height="26" rx="13" class="toast"/>
+<text x="562" y="105" text-anchor="middle" class="toasttext">✓ Link copied!</text>
+<rect x="468" y="128" width="150" height="36" rx="6" class="urlbox"/>
+<text x="478" y="150" class="urltext" font-size="10">robotude.app/r/8f2a1c…</text>
+<text x="452" y="200" class="label" font-size="10">Toast confirms the copy, then</text>
+<text x="452" y="214" class="label" font-size="10">auto-dismisses after ~2s. Sheet</text>
+<text x="452" y="228" class="label" font-size="10">stays open underneath.</text>
+
+<!-- ============ small state: OG preview on another platform ============ -->
+<text x="452" y="268" class="state-title">State: pasted link (e.g. iMessage)</text>
+<rect x="452" y="280" width="220" height="200" rx="16" class="frame"/>
+<rect x="468" y="296" width="188" height="150" rx="12" class="chatbubble"/>
+<rect x="480" y="308" width="164" height="90" rx="8" class="artifactcard"/>
+<rect x="490" y="318" width="30" height="30" rx="6" class="ximg"/>
+<text x="528" y="330" class="archnamewhite" font-size="9">THE BACKSEAT</text>
+<text x="528" y="341" class="archnamewhite" font-size="9">DRIVER</text>
+<text x="490" y="368" class="footerwhite" font-size="8">robo-tude · Take the quiz →</text>
+<text x="480" y="414" class="title" font-size="11">See my AI attitude profile</text>
+<text x="480" y="428" class="label" font-size="9.5">robotude.app</text>
+<text x="452" y="500" class="label" font-size="10">Rendered from OG meta tags set</text>
+<text x="452" y="514" class="label" font-size="10">by the results page itself — same</text>
+<text x="452" y="528" class="label" font-size="10">image/title/description the artifact</text>
+<text x="452" y="542" class="label" font-size="10">card above shows, per PRD Req. 4.</text>
+
+<!-- legend -->
+<text x="40" y="770" class="legend-title">Feature 4 — Shareable Results Artifact</text>
+<line x1="40" y1="782" x2="860" y2="782" stroke="#D3D1C7" stroke-width="1"/>
+
+<text x="40" y="808" class="legend-num">1</text>
+<text x="60" y="808" class="legend-text">Dimmed backdrop — the results screen (05b) stays visible-but-inert behind the sheet, so the visitor keeps context for what they're sharing. Standard bottom-sheet pattern, not a full-screen navigation away from results.</text>
+
+<text x="40" y="834" class="legend-num">2</text>
+<text x="60" y="834" class="legend-text">Drag handle + close (✕) — sheet is dismissible by swipe-down or tap, returns to 05b with no state lost.</text>
+
+<text x="40" y="860" class="legend-num">3</text>
+<text x="60" y="860" class="legend-text">Shareable artifact card — this is the actual image rendered into the link's OG meta tags (see the "pasted link" state), so what's previewed here in the sheet is exactly what a recipient sees before clicking. Must be "visually self-contained and interpretable without context" (PRD Requirement 4): the Archetype Card content only — icon + name + one-line summary (same as 05b's header) — plus a "robo-tude · Take the quiz yourself" prompt so a first-time viewer knows what it is and what to do next. No spectrum/domain visualization on the card itself — a recipient who's never used the app has no baseline to read a chart against, so the card stays to the archetype, which reads on its own.</text>
+
+<text x="40" y="918" class="legend-num">4</text>
+<text x="60" y="918" class="legend-text">Native share targets — Messages, X, Instagram, and a platform "More" sheet (native OS share sheet, covers email, other apps). Instagram has no direct share-with-caption API from web, so its icon copies the link and opens the camera/story composer — annotated, not a broken promise.</text>
+
+<text x="40" y="944" class="legend-num">5</text>
+<text x="60" y="944" class="legend-text">Copy-link field + button — the fallback that always works regardless of platform/app availability; satisfies the P0 acceptance criterion "a Share or Copy link action is available on the results screen" on its own even if native share targets are unavailable (e.g. desktop web).</text>
+
+<text x="40" y="976" class="legend-text" font-style="italic">Responsive: on desktop (no native share sheet), the icon row becomes just Copy-link + a "Share to X" web-intent link; the artifact card and sheet become a centered modal instead of a bottom sheet. Accessibility: the artifact card's image needs alt text summarizing the archetype and prompt ("The Backseat Driver — take the AI attitude quiz yourself"), since it's the literal image search engines/link-unfurlers will read.</text>
+</svg>
