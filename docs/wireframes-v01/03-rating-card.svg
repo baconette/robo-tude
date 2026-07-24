@@ -31,6 +31,8 @@
 .state-title { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
 .btn { fill:#2C2C2A; }
 .btntext { fill:#FFFFFF; font-size:13px; font-weight:600; font-family: Arial, sans-serif; }
+.btn-disabled { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.btn-disabled-text { fill:#B9B7AC; font-size:13px; font-weight:600; font-family: Arial, sans-serif; }
 </style>
 
 <!-- ============ MAIN: default state ============ -->
@@ -90,6 +92,10 @@
 <text x="327" y="408" text-anchor="middle" class="scalenum">5</text>
 </g>
 
+<!-- Next button — disabled until a segment is picked; see "selected" state for its enabled look -->
+<rect x="66" y="440" width="298" height="44" rx="6" class="btn-disabled"/>
+<text x="215" y="467" text-anchor="middle" class="btn-disabled-text">Next →</text>
+
 <!-- callouts -->
 <circle cx="400" cy="82" r="10" class="callout"/><text x="400" y="86" text-anchor="middle" class="callouttext">1</text>
 <line x1="390" y1="82" x2="368" y2="82" class="leader"/>
@@ -109,9 +115,12 @@
 <circle cx="400" cy="384" r="10" class="callout"/><text x="400" y="388" text-anchor="middle" class="callouttext">6</text>
 <line x1="390" y1="384" x2="364" y2="384" class="leader"/>
 
+<circle cx="400" cy="462" r="10" class="callout"/><text x="400" y="466" text-anchor="middle" class="callouttext">7</text>
+<line x1="390" y1="462" x2="364" y2="462" class="leader"/>
+
 <!-- ============ small state: selected ============ -->
 <text x="452" y="60" class="state-title">State: selected (rated "Most")</text>
-<rect x="452" y="72" width="200" height="380" rx="16" class="frame"/>
+<rect x="452" y="72" width="200" height="420" rx="16" class="frame"/>
 <text x="472" y="100" class="title">← Back</text>
 <text x="632" y="100" text-anchor="end" class="label">Card 4 of 10</text>
 <g>
@@ -138,26 +147,32 @@
 <text x="603" y="247" text-anchor="middle" class="scaletextfill" font-size="9">Most</text>
 <rect x="624" y="220" width="28" height="46" rx="4" class="scaleseg"/>
 </g>
-<text x="472" y="290" class="label" font-size="10">Selection highlights instantly,</text>
-<text x="472" y="304" class="label" font-size="10">then auto-advances to the next</text>
-<text x="472" y="318" class="label" font-size="10">card after ~400ms — no separate</text>
-<text x="472" y="332" class="label" font-size="10">"Next" tap required.</text>
-<text x="472" y="358" class="label" font-size="10">Tapping a different segment before</text>
-<text x="472" y="372" class="label" font-size="10">advancing overrides the rating.</text>
+
+<!-- Next button, now enabled since a segment is selected -->
+<rect x="472" y="278" width="160" height="30" rx="5" class="btn"/>
+<text x="552" y="298" text-anchor="middle" class="btntext" font-size="11">Next →</text>
+
+<text x="472" y="326" class="label" font-size="10">Selection highlights instantly</text>
+<text x="472" y="340" class="label" font-size="10">and Next enables. Auto-advance</text>
+<text x="472" y="354" class="label" font-size="10">still fires after ~400ms if the</text>
+<text x="472" y="368" class="label" font-size="10">visitor doesn't tap Next first —</text>
+<text x="472" y="382" class="label" font-size="10">Next just lets them skip the wait.</text>
+<text x="472" y="408" class="label" font-size="10">Tapping a different segment before</text>
+<text x="472" y="422" class="label" font-size="10">advancing overrides the rating.</text>
 
 <!-- ============ small state: error ============ -->
-<text x="452" y="484" class="state-title">State: card failed to load</text>
-<rect x="452" y="496" width="200" height="240" rx="16" class="frame"/>
-<text x="472" y="524" class="title">← Back</text>
-<text x="632" y="524" text-anchor="end" class="label">Card 4 of 10</text>
-<rect x="472" y="546" width="160" height="90" class="box" stroke-dasharray="3,3"/>
-<text x="552" y="580" text-anchor="middle" class="label">Couldn't load this</text>
-<text x="552" y="596" text-anchor="middle" class="label">use case.</text>
-<rect x="512" y="612" width="80" height="30" rx="6" class="btn"/>
-<text x="552" y="631" text-anchor="middle" class="btntext">Retry</text>
-<text x="472" y="662" class="label" font-size="10">Progress and prior ratings in this</text>
-<text x="472" y="676" class="label" font-size="10">bundle are preserved; only the</text>
-<text x="472" y="690" class="label" font-size="10">current card is affected.</text>
+<text x="452" y="524" class="state-title">State: card failed to load</text>
+<rect x="452" y="536" width="200" height="240" rx="16" class="frame"/>
+<text x="472" y="564" class="title">← Back</text>
+<text x="632" y="564" text-anchor="end" class="label">Card 4 of 10</text>
+<rect x="472" y="586" width="160" height="90" class="box" stroke-dasharray="3,3"/>
+<text x="552" y="620" text-anchor="middle" class="label">Couldn't load this</text>
+<text x="552" y="636" text-anchor="middle" class="label">use case.</text>
+<rect x="512" y="652" width="80" height="30" rx="6" class="btn"/>
+<text x="552" y="671" text-anchor="middle" class="btntext">Retry</text>
+<text x="472" y="702" class="label" font-size="10">Progress and prior ratings in this</text>
+<text x="472" y="716" class="label" font-size="10">bundle are preserved; only the</text>
+<text x="472" y="730" class="label" font-size="10">current card is affected.</text>
 
 <!-- legend -->
 <text x="40" y="900" class="legend-title">Annotations</text>
@@ -181,5 +196,8 @@
 <text x="40" y="1078" class="legend-num">6</text>
 <text x="60" y="1078" class="legend-text">1–5 rating scale — Never/Some/Neutral/Most/Always. Touch and mouse compatible; each segment is a single tap target (min 48×48pt). Selecting a segment auto-advances (see "selected" state) — no separate submit step.</text>
 
-<text x="40" y="1100" class="legend-text" font-style="italic">Responsive: ≥768px centers the card at a fixed max-width (~480px) rather than stretching full-bleed; scale segments grow proportionally. Accessibility: scale is a radiogroup (one selection), arrow-key navigable; "Back" and "request explanation" both keyboard-reachable and screen-reader labeled.</text>
+<text x="40" y="1104" class="legend-num">7</text>
+<text x="60" y="1104" class="legend-text">"Next" button — disabled (grayed out, as shown on the main card) until a segment is selected. Once enabled it lets a visitor who doesn't want to wait out the ~400ms auto-advance move on immediately; auto-advance still fires on its own if Next isn't tapped, so this is a speed-up, not a replacement for it. Tapping a different segment before advancing overrides the rating either way.</text>
+
+<text x="40" y="1136" class="legend-text" font-style="italic">Responsive: ≥768px centers the card at a fixed max-width (~480px) rather than stretching full-bleed; scale segments grow proportionally. Accessibility: scale is a radiogroup (one selection), arrow-key navigable; "Back", "request explanation", and "Next" all keyboard-reachable and screen-reader labeled — Next's disabled state should be announced (aria-disabled), not just visually grayed.</text>
 </svg>

@@ -13,11 +13,11 @@ As AI tooling becomes more prevalent across creative, professional, and personal
 
 ## Goals
 
-1. **Educate through exposure** — visitors who complete the experience can name at least 3 AI use cases they hadn't previously considered (validated via optional post-experience prompt).
-2. **Prompt meaningful self-reflection** — at least 70% of visitors complete the full rating exercise (not just one or two domains).
+1. **Educate through exposure (KNOW)** — visitors who complete the experience can name at least 3 AI use cases they hadn't previously considered (validated via optional post-experience prompt).
+2. **Prompt meaningful self-reflection (FEEL)** — at least 55% of visitors complete more than 5 bundles of rating PLUS click-through to learn more about AI's impact to establish a relationship between their attitude and the broader AI use cases landscape.
 3. **Deliver a personalized insight** — every visitor receives a unique, shareable summary of their own AI attitude profile upon completion.
 4. **Make aggregate data legible** — visitors can compare their ratings to the broader pool in a way that surfaces genuine surprise or validation ("I'm more skeptical than most people my age").
-5. **Drive social sharing** — at least 20% of completers share their individual results or the aggregate visualization externally.
+5. **Drive social sharing (DO)** — at least 20% of completers share their individual results or the aggregate visualization externally.
 
 ---
 
@@ -182,7 +182,7 @@ As AI tooling becomes more prevalent across creative, professional, and personal
 
 | Metric | Target | Measurement |
 |---|---|---|
-| Completion rate | ≥70% of visitors who start finish all ratings in a domain | Analytics: session funnel |
+| Completion rate | ≥55% of visitors complete more than 5 bundles of rating AND click through to the AI impact explainer | Analytics: session funnel + impact explainer click-through event |
 | Time to complete | Median session 4–8 min | Analytics: session duration for completers |
 | Share rate | ≥20% of completers click share | Analytics: share action event |
 | Drop-off point | No single use case causes >15% abandonment | Analytics: per-step drop-off |
