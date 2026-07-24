@@ -8,6 +8,21 @@
     "getting-started"
   ],
   "thumbnail": "",
-  "lastUpdated": "2026-07-24T14:49:09+0000"
+  "lastUpdated": "2026-07-24T10:09:10-05:00"
+}
+,
+{
+  "folder": "rating-results-flow",
+  "name": "Rating \u2192 Results Flow",
+  "description": "Clickable walkthrough of PRD P0 Features 1-4: landing, use-case rating, individual results (archetype + spectrum), friend comparison, and share sheet. Built from wireframes-v01 and archetype-logic.md.",
+  "tags": [
+    "p0",
+    "rating",
+    "results",
+    "comparison",
+    "share"
+  ],
+  "thumbnail": "",
+  "lastUpdated": "2026-07-24T11:08:01-05:00"
 }
 ]
