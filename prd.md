@@ -51,7 +51,7 @@ As AI tooling becomes more prevalent across creative, professional, and personal
 ### Curious Explorer
 
 - As someone unfamiliar with AI use cases, I want brief, jargon-free phrasing of each use case so that I can form an opinion without needing prior knowledge.
-- As someone unfamiliar with AI use cases, I can provide feedback about a use case phrasing by clicking a button to say "I don't understand this use case"
+- As someone unfamiliar with AI use cases, I can read more about a use case by clicking a button to say "Explain this question more."
 - As someone interested in the "human vs. AI" debate, I want a visualization that helps me articulate my own intuitions so that I can engage more confidently in that conversation.
 
 ---
@@ -61,10 +61,10 @@ As AI tooling becomes more prevalent across creative, professional, and personal
 ### P0 — Must Have
 
 **1. AI Use Case Rating Module**
-- Visitors rate each AI use case on a scale. Rating scale roughly describes who should perform a given use case, a human or an AI robot: **Never (1) · Some (2) · Neutral (3) · Most (4) · Always (5), midpoint 3**. This framing produces meaningfully different data and a different emotional experience for visitors than the alternatives previously considered.
-- Use cases are organized into discrete **domains**, each with one or more **subdomains**. (103 use cases total.) Additional use cases may be added in future epics via new Notion database records — no schema changes required. Notion database is connected to a remote database for the app.
+- Visitors rate each AI use case on a scale. Rating scale roughly describes who should perform a given use case, a human or an AI robot: **Never (0) · Some (1) · Most (2) · Always (3)**. This framing produces meaningfully different data and a different emotional experience for visitors than the alternatives previously considered.
+- Use cases are organized into discrete **domains**, each one has one or more **subdomains**. (103 use cases total.) Additional use cases may be added in future epics via new Notion database records — no schema changes required. Notion database is connected to a remote database for the app.
 - The app must support incremental use case addition without requiring a full re-deploy.
-- If a visitor doesn't understand a use case as written, the visitor can request that an explanation be added to it. This is a lightweight flag/request action, not a live AI-generated explanation — requests are queued for the content team to address.
+- If a visitor doesn't understand a use case as written, the visitor can click on a link below the use case copy and read more about what the use case is about. This is populated from the AI-use-cases database description column.
 - If a visitor wants to change their previous use case rating, they can go back by clicking a back button.
 - Since use cases are organized into domains, the visitor will see them labeled that way. The visitor is served **10 use cases per bundle**, drawn without regard to domain or subdomain, so the rating experience feels like a continuous stream rather than a category-by-category survey.
 - A first-time visitor is served the ten featured use cases from 5 specific domains, so 2 per domain. This should be flagged in the database as featured first-time visitor use cases.
@@ -73,11 +73,11 @@ As AI tooling becomes more prevalent across creative, professional, and personal
   - [ ] A visitor can complete all ratings in a single session without account creation
   - [ ] Each use case is presented with its domain badge visible
   - [ ] Use case phrasing is jargon-free and requires no prior AI knowledge to understand
-  - [ ] A visitor can request a better phrasing be added to a use case
+  - [ ] A visitor can see a use case description by clicking a link that says "Explain this question more."
   - [ ] The interaction is touch and mouse compatible
   - [ ] Use cases are served in randomized bundles of 10, drawn across domains and subdomains, with a visible badge labeling the domain they belong to
   - [ ] Progress is visible so visitors know how far along they are within the current 10-use-case bundle
-  - [ ] After completing a bundle, the visitor is presented with a clear choice to view results or continue to another bundle
+  - [ ] After completing a bundle, the visitor is presented with their results immediately.
   - [ ] The results visualization reflects the visitor's cumulative ratings across all bundles completed so far
   - [ ] New domains and subdomains can be added to the underlying data without breaking existing use cases or visitor flows
 
@@ -86,11 +86,12 @@ As AI tooling becomes more prevalent across creative, professional, and personal
 - The visualization must make the visitor's overall "AI attitude profile" legible at a glance — not just a list of scores.
 - Visualization type consists of two parts:
   - An archetype based on the defined archetype logic
-  - A graph/visualization demonstrating per-domain rating. When ideating this, generate at least 3 different suggestions.
+  - A graph/visualization demonstrating per-domain rating.
 - Acceptance criteria:
   - [ ] Results appear immediately after the final rating, with no loading state > 2 seconds
   - [ ] The visualization is readable with minimal explanation copy
   - [ ] The visitor can see their rating for each domain within the visualization or on demand
+  - [ ] The visitor can tap on each domain spectrum and see a summary of their domain rating decisions.
 
 **3. Comparison Visualization**
 - After viewing individual results:
@@ -113,7 +114,7 @@ As AI tooling becomes more prevalent across creative, professional, and personal
 - The shared encoded URL is used to compare a new visitor's results with the results from the encoded URL that led them to the app.
 - The shared artifact must be visually self-contained and interpretable without context.
 - Acceptance criteria:
-  - [ ] A "Share" or "Copy link" action is available on the results screen
+  - [ ] A "Share your results" is available on the results screen
   - [ ] The shared link renders a meaningful preview on major platforms (Twitter/X, Instagram, iMessage) via OG meta tags
   - [ ] The shared link loads the sharer's results profile and prompts the viewer to take the experience themselves
 
