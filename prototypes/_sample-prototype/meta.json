@@ -1,0 +1,9 @@
+{
+  "name": "Sample Prototype",
+  "description": "A simple example showing the prototype file structure. Feel free to delete this folder.",
+  "tags": ["sample", "getting-started"],
+  "options": [
+    { "file": "hello-world.html", "label": "1", "description": "Light theme card" },
+    { "file": "dark-card.html", "label": "2", "description": "Dark theme variant" }
+  ]
+}

@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Deno Edge Function code — separate runtime, not part of this lint config.
     "supabase/functions/**",
+    // Vendored static prototyping kit — plain HTML/JS, not part of this lint config.
+    "prototypes/**",
   ]),
 ]);
 
