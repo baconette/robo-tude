@@ -230,8 +230,18 @@
 
 <div class="phone">
 
+  <!-- ============ SCREEN: Loading real content from Supabase ============ -->
+  <section class="screen active" id="screen-loading" style="align-items:center; justify-content:center; text-align:center;">
+    <div class="app-title" style="border:none; margin:0 0 20px;">robo-tude</div>
+    <p class="subhead" id="loadingMessage" style="margin-bottom:0;">Loading use cases…</p>
+    <div id="loadingError" style="display:none; margin-top:16px;">
+      <p class="subhead">Couldn't load use cases from Supabase. Check your connection and try again.</p>
+      <button class="btn" id="btnRetryLoad" style="width:auto; padding:12px 24px; display:inline-block;">Retry</button>
+    </div>
+  </section>
+
   <!-- ============ SCREEN: Landing (first-time) ============ -->
-  <section class="screen active" id="screen-landing-first">
+  <section class="screen" id="screen-landing-first">
     <div class="app-title">robo-tude</div>
     <div class="hero-img"></div>
     <h1>Human, or AI?</h1>
@@ -440,11 +450,8 @@
   // ---------------------------------------------------------------
   // Data: canonical domains + archetype-logic.md's 22-archetype table
   // ---------------------------------------------------------------
-  var DOMAINS = [
-    "Healthcare", "Finances", "Home & Personal Life", "Leisure & Hospitality",
-    "Robotics", "Productivity", "Mobility", "Education",
-    "Legal & Public Services", "Media & Culture"
-  ];
+  // Populated from Supabase on load (see loadContent() below) — starts empty.
+  var DOMAINS = [];
 
   var ARCHETYPES = {
     "Healthcare": {
@@ -492,33 +499,63 @@
   var EVEN_KEEL = { name: "The Even Keel", copy: "You're remarkably consistent — whatever your take on AI, it holds steady across everything you've rated so far, no domain pulling ahead of the rest." };
   var BLANK_SLATE = { name: "The Blank Slate", copy: "You haven't rated enough across different domains yet for a clear lean to show — keep going and we'll find where you stand out." };
 
-  // Bundle 1: PRD's "featured first-time" structure — 2 use cases x 5 domains.
-  var BUNDLE_1 = [
-    { domain: "Healthcare", text: "Reviewing your lab results and flagging anything that looks off before your doctor calls." },
-    { domain: "Healthcare", text: "Deciding your treatment plan after a new diagnosis." },
-    { domain: "Finances", text: "Categorizing your monthly spending into a budget." },
-    { domain: "Finances", text: "Deciding whether to refinance your mortgage." },
-    { domain: "Mobility", text: "Choosing the fastest route for your commute in real time." },
-    { domain: "Mobility", text: "Taking full control of the car on the highway while you read." },
-    { domain: "Education", text: "Grading a multiple-choice quiz." },
-    { domain: "Education", text: "Writing feedback on your college admissions essay." },
-    { domain: "Media & Culture", text: "Recommending your next playlist based on listening habits." },
-    { domain: "Media & Culture", text: "Writing the score for a film." }
-  ];
+  // Bundle 1/2: populated from Supabase on load (see loadContent() below), sourced
+  // from use_cases.status = 'featured' — 2 featured rows per domain across all 10
+  // domains (not "5 flagged domains" as the PRD's prose describes; there's no
+  // domain-level featured flag, only this per-use-case one). Bundle 1 = first 5
+  // domains' (alphabetical) featured pair; Bundle 2 = the remaining 5 domains' pair.
+  var BUNDLE_1 = [];
+  var BUNDLE_2 = [];
 
-  // Bundle 2: remaining 5 domains x 2, reached via "Rate more use cases".
-  var BUNDLE_2 = [
-    { domain: "Home & Personal Life", text: "Reordering groceries when you're running low." },
-    { domain: "Home & Personal Life", text: "Deciding how to spend a free Saturday." },
-    { domain: "Leisure & Hospitality", text: "Suggesting restaurants based on your past ratings." },
-    { domain: "Leisure & Hospitality", text: "Planning your entire vacation itinerary, including all bookings." },
-    { domain: "Robotics", text: "Vacuuming your apartment on a schedule." },
-    { domain: "Robotics", text: "Performing surgery with no human in the room." },
-    { domain: "Productivity", text: "Auto-sorting your inbox into folders." },
-    { domain: "Productivity", text: "Writing your performance review for your manager." },
-    { domain: "Legal & Public Services", text: "Pre-filling your tax forms from your documents." },
-    { domain: "Legal & Public Services", text: "Deciding the outcome of a small claims court case." }
-  ];
+  var SUPABASE_URL = "https://ugkmacjiddotrafctqsi.supabase.co";
+  var SUPABASE_ANON_KEY = "sb_publishable_aHswmnV3UAZj-Ki935f2mw_Xd2mxKBK";
+
+  function supabaseGet(path) {
+    return fetch(SUPABASE_URL + "/rest/v1/" + path, {
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: "Bearer " + SUPABASE_ANON_KEY }
+    }).then(function (r) {
+      if (!r.ok) throw new Error("Supabase request failed: " + r.status);
+      return r.json();
+    });
+  }
+
+  // Fetches real domains/use_cases (RLS already restricts use_cases to published rows)
+  // and builds DOMAINS + the two rating bundles from live content.
+  function loadContent() {
+    return Promise.all([
+      supabaseGet("domains?select=notion_id,name"),
+      supabaseGet("use_cases?select=use_case,domain_id,order_index&status=eq.featured&order=domain_id.asc,order_index.asc")
+    ]).then(function (results) {
+      var domainRows = results[0], useCaseRows = results[1];
+
+      var idToName = {};
+      domainRows.forEach(function (d) { idToName[d.notion_id] = d.name; });
+
+      var byDomain = {};
+      useCaseRows.forEach(function (uc) {
+        var name = idToName[uc.domain_id];
+        if (!name) return;
+        if (!byDomain[name]) byDomain[name] = [];
+        if (byDomain[name].length < 2) byDomain[name].push(uc.use_case);
+      });
+
+      var domainNames = domainRows.map(function (d) { return d.name; }).sort();
+      DOMAINS.length = 0;
+      domainNames.forEach(function (n) { DOMAINS.push(n); });
+
+      function buildBundle(names) {
+        var cards = [];
+        names.forEach(function (n) {
+          (byDomain[n] || []).forEach(function (text) { cards.push({ domain: n, text: text }); });
+        });
+        return cards;
+      }
+      BUNDLE_1.length = 0;
+      buildBundle(domainNames.slice(0, 5)).forEach(function (c) { BUNDLE_1.push(c); });
+      BUNDLE_2.length = 0;
+      buildBundle(domainNames.slice(5, 10)).forEach(function (c) { BUNDLE_2.push(c); });
+    });
+  }
 
   // Hardcoded "friend" dataset — tuned so their standout is Mobility/cool,
   // i.e. The Backseat Driver, matching the name used across wireframes 02/06/07.
@@ -954,6 +991,24 @@
       rowsWrap.appendChild(row);
     });
   }
+
+  // ---------------------------------------------------------------
+  // Initial load
+  // ---------------------------------------------------------------
+  function startLoading() {
+    document.getElementById("loadingMessage").style.display = "block";
+    document.getElementById("loadingError").style.display = "none";
+    loadContent().then(function () {
+      document.getElementById("screen-loading").classList.remove("active");
+      showScreen("landing-first");
+    }).catch(function (err) {
+      document.getElementById("loadingMessage").style.display = "none";
+      document.getElementById("loadingError").style.display = "block";
+      console.error(err);
+    });
+  }
+  document.getElementById("btnRetryLoad").addEventListener("click", startLoading);
+  startLoading();
 
 })();
 </script>
