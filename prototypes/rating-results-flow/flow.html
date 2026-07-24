@@ -89,6 +89,7 @@
   }
   .btn-row { display: flex; gap: 10px; }
   .btn-row .btn-outline { flex: 1; }
+  .btn-cta-narrow { width: 30%; margin-left: auto; }
   .link { background: none; border: none; color: var(--ink-soft); font-size: 12.5px; text-decoration: underline; cursor: pointer; font-family: inherit; }
   .link-strong { background: none; border: none; color: var(--ink); font-size: 12px; font-weight: 700; text-decoration: underline; cursor: pointer; font-family: inherit; }
 
@@ -126,7 +127,7 @@
   .track-wrap { display: flex; justify-content: space-between; font-size: 9px; font-weight: 700; color: var(--muted); letter-spacing: 0.4px; margin-bottom: 4px; }
   .track { position: relative; height: 3px; background: var(--line); border-radius: 3px; margin: 14px 0 4px; }
   .track .tick { position: absolute; top: -5px; width: 1.5px; height: 13px; background: var(--line); }
-  .marker { position: absolute; top: 50%; width: 18px; height: 18px; border-radius: 50%; background: var(--ink); transform: translate(-50%, -50%); border: 2px solid var(--white); box-shadow: 0 0 0 1.5px var(--ink); }
+  .marker { position: absolute; top: 50%; width: 18px; height: 18px; border-radius: 50%; background: var(--ink); transform: translate(-50%, -50%); }
   .marker.friend { background: var(--panel); border: 2px solid var(--ink); box-shadow: none; }
   .connector { position: absolute; top: 50%; height: 2px; background: var(--img-line); transform: translateY(-50%); }
   .row-summary { background: var(--panel); border-radius: 6px; padding: 10px 12px; font-size: 11.5px; font-style: italic; color: #3A3A38; margin-top: 8px; display: none; }
@@ -149,9 +150,12 @@
   .progress-bar .seg.done { background: var(--ink); }
   .progress-bar .seg.current { background: var(--ink); opacity: 0.35; }
 
+  .badge-row { display: flex; justify-content: space-between; align-items: center; }
   .domain-badge { display: inline-block; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 5px 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; color: var(--ink-soft); margin-bottom: 18px; }
   .use-case-text { font-size: 19px; line-height: 1.35; margin-bottom: 14px; }
-  .explain-btn { width: 100%; border: 1.5px dashed var(--line); border-radius: 6px; background: var(--white); padding: 9px; font-size: 11px; color: var(--ink-soft); cursor: pointer; font-family: inherit; margin-bottom: 26px; }
+  .explain-btn { display: inline-block; width: auto; border: none; background: none; padding: 0; font-size: 12px; color: var(--ink-soft); text-decoration: underline; cursor: pointer; font-family: inherit; text-align: left; margin-bottom: 12px; }
+  .explain-panel { background: var(--panel); border-radius: 6px; padding: 11px 13px; font-size: 12px; color: #3A3A38; line-height: 1.4; margin-bottom: 26px; min-height: 60px; opacity: 0; visibility: hidden; transition: opacity 0.15s; }
+  .explain-panel.open { opacity: 1; visibility: visible; }
 
   .scale-label { font-size: 11.5px; color: var(--ink-soft); margin-bottom: 10px; }
   .scale { display: flex; gap: 6px; margin-bottom: 22px; }
@@ -217,6 +221,9 @@
   .chat-bubble .link-domain { font-size: 10px; color: var(--ink-soft); }
 
   .foot-note { font-size: 10px; color: var(--muted); text-align: center; margin-top: 18px; }
+
+  .text-input { width: 100%; border: 1.5px solid var(--line); border-radius: 6px; padding: 13px; font-size: 14px; font-family: inherit; color: var(--ink); margin-bottom: 16px; }
+  .text-input:focus { outline: none; border-color: var(--ink); }
 </style>
 </head>
 <body>
@@ -244,13 +251,13 @@
   <section class="screen" id="screen-landing-first">
     <div class="app-title">robo-tude</div>
     <div class="hero-img"></div>
-    <h1>Human, or AI?</h1>
-    <p class="subhead">Rate real AI use cases across your life — health, money, home, and more — and see where you actually stand.</p>
+    <h1>AI is everywhere<br>but it's not all the same...</h1>
+    <p class="subhead">Answer how you think AI should be involved in real use cases, then see how your profile compares to others.</p>
     <div style="margin-top:auto;">
       <p class="microcopy">Takes ~5 min · No sign-up needed</p>
       <button class="btn" id="btnStartFirst">Start rating</button>
       <div class="secondary-link-row">
-        <button class="link" id="btnEnterCode">Have a code from a friend? Enter it →</button>
+        <button class="link" id="btnEnterCode">Have a code? Enter it →</button>
       </div>
     </div>
   </section>
@@ -269,6 +276,10 @@
     </div>
 
     <p class="microcopy" style="text-align:left; margin-bottom:8px;">A few of your friend's domains</p>
+    <div class="marker-key" style="margin-bottom:12px;">
+      <span><span class="key-dot friend" style="border-style:dashed; border-color:var(--muted);"></span>You</span>
+      <span><span class="key-dot"></span>Your friend</span>
+    </div>
     <div id="sharedTeaser"></div>
     <p class="row-hint">Rate your own to drop your marker on each spectrum</p>
 
@@ -285,25 +296,27 @@
   <section class="screen" id="screen-rating" style="position:relative;">
     <button class="sim-error-toggle" id="btnSimError">⚠ simulate error</button>
     <div class="top-bar">
-      <button class="back-btn" id="btnBack">← Back</button>
       <span class="card-count" id="cardCount">Card 1 of 10</span>
     </div>
     <div class="progress-bar" id="progressBar"></div>
 
     <div id="ratingNormal">
-      <span class="domain-badge" id="domainBadge">DOMAIN</span>
+      <div class="badge-row">
+        <span class="domain-badge" id="domainBadge">DOMAIN</span>
+        <button class="back-btn" id="btnBack">← Back</button>
+      </div>
       <p class="use-case-text" id="useCaseText">Use case text</p>
-      <button class="explain-btn" id="btnExplain">🏳 I don't understand this use case</button>
+      <button class="explain-btn" id="btnExplain">Explain this question more →</button>
+      <div class="explain-panel" id="explainPanel"></div>
 
       <p class="scale-label">Who should do this — a human or an AI?</p>
       <div class="scale" id="scale">
-        <button data-v="1"><span class="lbl">Never</span><span class="num">1</span></button>
-        <button data-v="2"><span class="lbl">Some</span><span class="num">2</span></button>
-        <button data-v="3"><span class="lbl">Neutral</span><span class="num">3</span></button>
-        <button data-v="4"><span class="lbl">Most</span><span class="num">4</span></button>
-        <button data-v="5"><span class="lbl">Always</span><span class="num">5</span></button>
+        <button data-v="1"><span class="lbl">Never</span><span class="num">0</span></button>
+        <button data-v="2"><span class="lbl">Some</span><span class="num">1</span></button>
+        <button data-v="4"><span class="lbl">Most</span><span class="num">2</span></button>
+        <button data-v="5"><span class="lbl">Always</span><span class="num">3</span></button>
       </div>
-      <button class="btn" id="btnNext" disabled>Next →</button>
+      <button class="btn btn-cta-narrow" id="btnNext" disabled>Next →</button>
     </div>
 
     <div id="ratingError" style="display:none;">
@@ -321,18 +334,14 @@
   <section class="screen" id="screen-results" style="position:relative;">
     <div class="app-title">robo-tude</div>
     <div id="resultsArchCard"></div>
-    <p class="microcopy" style="text-align:left; margin-bottom:10px;">Your ratings by domain</p>
+    <p class="row-hint" id="answeredSummary" style="text-align:left; margin-top:-10px;"></p>
+    <p class="microcopy" style="text-align:left; margin-bottom:6px;">Your ratings by domain</p>
+    <div class="track-wrap" style="margin-bottom:14px;"><span>HUMAN</span><span>AI</span></div>
     <div id="resultsRows" style="flex:1; overflow-y:auto;"></div>
-    <p class="row-hint">Tap any row for a one-line summary</p>
-
-    <button class="impact-cta" id="btnImpact">
-      <span class="icon">i</span>
-      <span><span class="title">Learn more about AI's impact →</span><br><span class="sub">Jobs · Economy · Health · Industry</span></span>
-    </button>
 
     <button class="btn" id="btnCompare" style="margin-bottom:10px;">See how you compare →</button>
     <div class="btn-row">
-      <button class="btn-outline" id="btnShare">Share my results</button>
+      <button class="btn-outline" id="btnShare">Share your results</button>
       <button class="btn-outline" id="btnRateMore">Rate more use cases</button>
     </div>
 
@@ -356,6 +365,8 @@
           </div>
         </div>
         <p class="artifact-footer">robo-tude · Take the quiz yourself →</p>
+
+        <div id="shareSpectrumPreview" style="margin-bottom:6px;"></div>
 
         <div class="share-icons">
           <button class="share-icon" data-target="Messages"><span class="circle">💬</span><span class="lbl">Messages</span></button>
@@ -393,8 +404,10 @@
 
   <!-- ============ SCREEN: Comparison (spectrum) ============ -->
   <section class="screen" id="screen-compare">
-    <button class="back-btn" id="btnCompareBack" style="text-align:left; margin-bottom:10px;">← Back</button>
-    <h1 style="font-size:17px; margin-bottom:14px;" id="compareTitle">You + your friend</h1>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+      <h1 style="font-size:17px; margin:0;" id="compareTitle">You + your friend</h1>
+      <button class="back-btn" id="btnCompareBack">← Back</button>
+    </div>
 
     <div class="tabs">
       <button class="tab active" id="tabFriend">Friend</button>
@@ -417,7 +430,6 @@
         </div>
       </div>
 
-      <p class="insight-line" id="insightLine"></p>
       <button class="sort-btn" id="btnSort">Most agreement first ⇅</button>
       <div class="marker-key">
         <span><span class="key-dot"></span>You</span>
@@ -434,12 +446,22 @@
       </div>
       <p class="foot-note">Per PRD Requirement 3: aggregate is withheld below a 25-respondent minimum. Friend comparison has no such gate.</p>
     </div>
-
-    <button class="impact-cta" id="btnImpact2" style="margin-top:16px;">
-      <span class="icon">i</span>
-      <span><span class="title">Learn more about AI's impact →</span><br><span class="sub">Jobs · Economy · Health · Industry</span></span>
-    </button>
   </section>
+
+  <!-- ============ CODE-ENTRY DRAWER (overlay, reachable from landing) ============ -->
+  <div class="sheet-overlay" id="codeSheet">
+    <div class="scrim" id="codeScrim"></div>
+    <div class="sheet" style="top:480px;">
+      <div class="sheet-handle"></div>
+      <div class="sheet-top">
+        <span class="title">Enter your friend's code</span>
+        <button class="sheet-close" id="btnCloseCodeSheet">✕</button>
+      </div>
+      <p class="subhead" style="font-size:13px; margin-bottom:18px;">Enter the code your friend shared with you to see how your AI attitudes compare.</p>
+      <input type="text" class="text-input" id="codeInput" placeholder="e.g. 8f2a1c">
+      <button class="btn" id="btnSubmitCode">Compare results</button>
+    </div>
+  </div>
 
 </div>
 
@@ -524,7 +546,7 @@
   function loadContent() {
     return Promise.all([
       supabaseGet("domains?select=notion_id,name"),
-      supabaseGet("use_cases?select=use_case,domain_id,order_index&status=eq.featured&order=domain_id.asc,order_index.asc")
+      supabaseGet("use_cases?select=use_case,description,domain_id,order_index&status=eq.featured&order=domain_id.asc,order_index.asc")
     ]).then(function (results) {
       var domainRows = results[0], useCaseRows = results[1];
 
@@ -536,7 +558,7 @@
         var name = idToName[uc.domain_id];
         if (!name) return;
         if (!byDomain[name]) byDomain[name] = [];
-        if (byDomain[name].length < 2) byDomain[name].push(uc.use_case);
+        if (byDomain[name].length < 2) byDomain[name].push({ text: uc.use_case, description: uc.description || "" });
       });
 
       var domainNames = domainRows.map(function (d) { return d.name; }).sort();
@@ -546,7 +568,7 @@
       function buildBundle(names) {
         var cards = [];
         names.forEach(function (n) {
-          (byDomain[n] || []).forEach(function (text) { cards.push({ domain: n, text: text }); });
+          (byDomain[n] || []).forEach(function (uc) { cards.push({ domain: n, text: uc.text, description: uc.description }); });
         });
         return cards;
       }
@@ -621,7 +643,6 @@
     bundlesUsed: 0,      // 0 = none started, 1 = bundle1 done, 2 = bundle2 done
     cardIndex: 0,
     selectedValue: null,
-    autoAdvanceTimer: null,
     simError: false,
     compareTab: "friend",
     compareSortDesc: false
@@ -633,7 +654,6 @@
     state.bundlesUsed = 0;
     state.cardIndex = 0;
     state.selectedValue = null;
-    clearTimeout(state.autoAdvanceTimer);
     state.simError = false;
     state.compareTab = "friend";
     state.compareSortDesc = false;
@@ -682,10 +702,10 @@
       row.className = "domain-row";
       row.style.marginBottom = "16px";
       row.innerHTML =
-        '<span class="domain-badge" style="margin-bottom:8px;">' + d.toUpperCase() + '</span>' +
+        '<div class="domain-title" style="cursor:default; margin-bottom:8px;"><span>' + d + '</span></div>' +
         '<div class="track">' +
           '<div class="marker" style="left:' + friendPositions[d] + '%;"></div>' +
-          '<div class="marker friend" style="left:' + visitorPositions[d] + '%; border-style:dashed;"></div>' +
+          '<div class="marker friend" style="left:' + visitorPositions[d] + '%; border-style:dashed; border-color:var(--muted);"></div>' +
         '</div>';
       wrap.appendChild(row);
     });
@@ -700,7 +720,18 @@
     showScreen("rating");
   });
   document.getElementById("btnEnterCode").addEventListener("click", function () {
-    setLandingVariant("shared");
+    document.getElementById("codeSheet").classList.add("open");
+  });
+  document.getElementById("btnCloseCodeSheet").addEventListener("click", function () {
+    document.getElementById("codeSheet").classList.remove("open");
+  });
+  document.getElementById("codeScrim").addEventListener("click", function () {
+    document.getElementById("codeSheet").classList.remove("open");
+  });
+  document.getElementById("btnSubmitCode").addEventListener("click", function () {
+    document.getElementById("codeSheet").classList.remove("open");
+    resetState();
+    showScreen("results");
   });
 
   function setLandingVariant(which) {
@@ -729,6 +760,9 @@
     document.getElementById("domainBadge").textContent = card.domain.toUpperCase();
     document.getElementById("useCaseText").textContent = card.text;
     document.getElementById("cardCount").textContent = "Card " + (state.cardIndex + 1) + " of " + state.bundle.length;
+    var explainPanel = document.getElementById("explainPanel");
+    explainPanel.textContent = card.description ? card.description : "No further explanation has been added for this use case yet.";
+    explainPanel.classList.remove("open");
 
     document.getElementById("btnBack").disabled = state.cardIndex === 0;
 
@@ -756,14 +790,10 @@
       state.bundle[state.cardIndex]._answer = v;
       scaleButtons.forEach(function (b) { b.classList.toggle("selected", b === btn); });
       document.getElementById("btnNext").disabled = false;
-
-      clearTimeout(state.autoAdvanceTimer);
-      state.autoAdvanceTimer = setTimeout(advanceCard, 400);
     });
   });
 
   document.getElementById("btnNext").addEventListener("click", function () {
-    clearTimeout(state.autoAdvanceTimer);
     advanceCard();
   });
 
@@ -793,13 +823,12 @@
 
   document.getElementById("btnBack").addEventListener("click", function () {
     if (state.cardIndex === 0) return;
-    clearTimeout(state.autoAdvanceTimer);
     state.cardIndex--;
     renderRatingCard();
   });
 
   document.getElementById("btnExplain").addEventListener("click", function () {
-    toast("toast", "Thanks — flagged for the content team", 1600);
+    document.getElementById("explainPanel").classList.toggle("open");
   });
 
   document.getElementById("btnSimError").addEventListener("click", function () {
@@ -827,9 +856,21 @@
           '<div class="arch-label">YOUR ARCHETYPE</div>' +
           '<div class="arch-name">' + content.name + '</div>' +
           '<div class="arch-summary">"' + content.copy + '"</div>' +
-          '<div class="arch-computing-note">computed from your ratings so far</div>' +
         '</div>' +
       '</div>';
+
+    var answeredCount = Object.keys(state.ratings).reduce(function (sum, d) { return sum + state.ratings[d].length; }, 0);
+    var answeredSummary = document.getElementById("answeredSummary");
+    answeredSummary.innerHTML = '';
+    answeredSummary.appendChild(document.createTextNode("Based on " + answeredCount + " answers so far. "));
+    var answerMoreLink = document.createElement("button");
+    answerMoreLink.className = "link";
+    answerMoreLink.id = "btnAnswerMore";
+    answerMoreLink.style.padding = "0";
+    answerMoreLink.style.fontSize = "11px";
+    answerMoreLink.textContent = "Answer 10 more";
+    answerMoreLink.addEventListener("click", handleRateMore);
+    answeredSummary.appendChild(answerMoreLink);
 
     var rowsWrap = document.getElementById("resultsRows");
     rowsWrap.innerHTML = "";
@@ -847,7 +888,6 @@
           '<div class="domain-title" data-toggle="' + rowId + '">' +
             '<span>' + c.domain + '</span>' +
           '</div>' +
-          '<div class="track-wrap"><span>HUMAN</span><span>AI</span></div>' +
           '<div class="track">' +
             '<div class="marker" style="left:' + markerPct(c.avg) + '%;"></div>' +
           '</div>' +
@@ -866,7 +906,7 @@
     state._lastArchetype = content;
   }
 
-  document.getElementById("btnRateMore").addEventListener("click", function () {
+  function handleRateMore() {
     if (state.bundlesUsed < 2) {
       // reset per-card recorded flags on the next bundle
       state.bundle = state.bundlesUsed === 1 ? BUNDLE_2 : BUNDLE_1;
@@ -877,17 +917,11 @@
     } else {
       toast("toastResults", "You've rated everywhere we've got in this prototype", 2200);
     }
-  });
+  }
+  document.getElementById("btnRateMore").addEventListener("click", handleRateMore);
 
   document.getElementById("btnCompare").addEventListener("click", function () {
     showScreen("compare");
-  });
-
-  document.getElementById("btnImpact").addEventListener("click", function () {
-    toast("toastResults", "Impact Explainer is a P1 feature — not built in this prototype", 2200);
-  });
-  document.getElementById("btnImpact2").addEventListener("click", function () {
-    toast("toastResults", "Impact Explainer is a P1 feature — not built in this prototype", 2200);
   });
 
   // ---------------------------------------------------------------
@@ -901,6 +935,20 @@
     document.getElementById("shareArchSummary").textContent = '"' + content.copy + '"';
     document.getElementById("ogArchName").textContent = content.name.toUpperCase();
     document.getElementById("ogPreview").classList.remove("open");
+
+    var spectrumWrap = document.getElementById("shareSpectrumPreview");
+    spectrumWrap.innerHTML = "";
+    var confident = (state._lastResult && state._lastResult.confident) ? state._lastResult.confident.slice(0, 3) : [];
+    confident.forEach(function (c) {
+      var row = document.createElement("div");
+      row.className = "domain-row";
+      row.style.marginBottom = "16px";
+      row.innerHTML =
+        '<div class="domain-title" style="cursor:default; margin-bottom:8px;"><span>' + c.domain + '</span></div>' +
+        '<div class="track"><div class="marker" style="left:' + markerPct(c.avg) + '%;"></div></div>';
+      spectrumWrap.appendChild(row);
+    });
+
     shareSheet.classList.add("open");
   });
   document.getElementById("btnCloseSheet").addEventListener("click", function () { shareSheet.classList.remove("open"); });
@@ -961,17 +1009,6 @@
       return { domain: c.domain, you: c.avg, friend: FRIEND_AVG[c.domain], gap: Math.abs(c.avg - FRIEND_AVG[c.domain]) };
     });
     rows.sort(function (a, b) { return state.compareSortDesc ? b.gap - a.gap : a.gap - b.gap; });
-
-    var insightEl = document.getElementById("insightLine");
-    if (rows.length >= 2) {
-      var mostAgree = rows.reduce(function (a, b) { return a.gap <= b.gap ? a : b; });
-      var mostDiverge = rows.reduce(function (a, b) { return a.gap >= b.gap ? a : b; });
-      insightEl.textContent = "You agree most on " + mostAgree.domain + " · diverge most on " + mostDiverge.domain;
-    } else if (rows.length === 1) {
-      insightEl.textContent = "Rate a bit more to unlock an agree/diverge insight.";
-    } else {
-      insightEl.textContent = "";
-    }
 
     var rowsWrap = document.getElementById("compareRows");
     rowsWrap.innerHTML = "";
