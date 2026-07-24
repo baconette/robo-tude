@@ -1,0 +1,125 @@
+<svg viewBox="0 0 620 1180" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wireframe: Individual results — concept C, domain gauge card grid</title>
+<desc>Mid-fi annotated wireframe for Feature 2. Concept C of 3: a 2-column grid of per-domain mini gauge cards. Third alternative alongside 05a (radar) and 05b (spectrum bars).</desc>
+<style>
+.frame { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.card { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.wavy-h1 { font-size:24px; fill:#2C2C2A; font-family: Arial, sans-serif; letter-spacing:-3px; }
+.wavy-body { font-size:14px; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:-2px; }
+.label { font-size:11.5px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.title { font-size:12.5px; font-weight:600; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.arc { fill:none; stroke:#D3D1C7; stroke-width:6; stroke-linecap:round; }
+.needle { stroke:#2C2C2A; stroke-width:2.5; stroke-linecap:round; }
+.hub { fill:#2C2C2A; }
+.value { font-size:15px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.badge { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1; }
+.badgetext { fill:#5F5E5A; font-size:9px; font-weight:700; font-family: Arial, sans-serif; letter-spacing:0.3px; }
+.btn { fill:#2C2C2A; }
+.btntext { fill:#FFFFFF; font-size:14px; font-weight:600; font-family: Arial, sans-serif; }
+.btn-outline { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:1.5; }
+.btn-outline-text { fill:#2C2C2A; font-size:14px; font-weight:600; font-family: Arial, sans-serif; }
+.link { fill:#5F5E5A; font-size:12px; font-family: Arial, sans-serif; text-decoration:underline; }
+.callout { fill:#2C2C2A; }
+.callouttext { fill:#FFFFFF; font-size:11px; font-weight:700; font-family: Arial, sans-serif; }
+.leader { stroke:#B9B7AC; stroke-width:1; stroke-dasharray:2,2; }
+.legend-title { font-size:13px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.legend-text { font-size:12px; fill:#3A3A38; font-family: Arial, sans-serif; }
+.legend-num { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+</style>
+
+<rect x="40" y="40" width="350" height="800" rx="26" class="frame"/>
+
+<text x="215" y="90" text-anchor="middle" class="wavy-h1">∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="215" y="112" text-anchor="middle" class="wavy-body">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+
+<text x="66" y="146" class="label">Your ratings by domain</text>
+
+<!-- row1 -->
+<rect x="66" y="156" width="150" height="150" rx="8" class="card"/>
+<text x="141" y="180" text-anchor="middle" class="title">Creative</text>
+<path d="M101,236 A40,40 0 0 1 181,236" class="arc"/>
+<line x1="141" y1="236" x2="171" y2="210" class="needle"/>
+<circle cx="141" cy="236" r="4" class="hub"/>
+<text x="141" y="270" text-anchor="middle" class="value">4.1</text>
+<rect x="106" y="278" width="70" height="18" rx="9" class="badge"/>
+<text x="141" y="290" text-anchor="middle" class="badgetext">LEANS AI</text>
+
+<rect x="246" y="156" width="150" height="150" rx="8" class="card"/>
+<text x="321" y="180" text-anchor="middle" class="title">Work</text>
+<path d="M281,236 A40,40 0 0 1 361,236" class="arc"/>
+<line x1="321" y1="236" x2="291" y2="210" class="needle"/>
+<circle cx="321" cy="236" r="4" class="hub"/>
+<text x="321" y="270" text-anchor="middle" class="value">2.3</text>
+<rect x="276" y="278" width="90" height="18" rx="9" class="badge"/>
+<text x="321" y="290" text-anchor="middle" class="badgetext">LEANS HUMAN</text>
+
+<!-- row2 -->
+<rect x="66" y="332" width="150" height="150" rx="8" class="card"/>
+<text x="141" y="356" text-anchor="middle" class="title">Health</text>
+<path d="M101,412 A40,40 0 0 1 181,412" class="arc"/>
+<line x1="141" y1="412" x2="141" y2="372" class="needle"/>
+<circle cx="141" cy="412" r="4" class="hub"/>
+<text x="141" y="446" text-anchor="middle" class="value">3.0</text>
+<rect x="112" y="454" width="58" height="18" rx="9" class="badge"/>
+<text x="141" y="466" text-anchor="middle" class="badgetext">MIXED</text>
+
+<rect x="246" y="332" width="150" height="150" rx="8" class="card"/>
+<text x="321" y="356" text-anchor="middle" class="title">Home</text>
+<path d="M281,412 A40,40 0 0 1 361,412" class="arc"/>
+<line x1="321" y1="412" x2="358" y2="400" class="needle"/>
+<circle cx="321" cy="412" r="4" class="hub"/>
+<text x="321" y="446" text-anchor="middle" class="value">4.6</text>
+<rect x="286" y="454" width="70" height="18" rx="9" class="badge"/>
+<text x="321" y="466" text-anchor="middle" class="badgetext">LEANS AI</text>
+
+<!-- row3 (single, centered) -->
+<rect x="156" y="508" width="150" height="150" rx="8" class="card"/>
+<text x="231" y="532" text-anchor="middle" class="title">Relationships</text>
+<path d="M191,588 A40,40 0 0 1 271,588" class="arc"/>
+<line x1="231" y1="588" x2="196" y2="600" class="needle"/>
+<circle cx="231" cy="588" r="4" class="hub"/>
+<text x="231" y="622" text-anchor="middle" class="value">1.6</text>
+<rect x="176" y="630" width="110" height="18" rx="9" class="badge"/>
+<text x="231" y="642" text-anchor="middle" class="badgetext">STRONGLY HUMAN</text>
+
+<text x="66" y="694" class="label" font-style="italic">Tap a card to see its individual use-case ratings</text>
+
+<!-- CTAs -->
+<rect x="66" y="712" width="298" height="50" rx="6" class="btn"/>
+<text x="215" y="742" text-anchor="middle" class="btntext">See how you compare →</text>
+<rect x="66" y="772" width="298" height="46" rx="6" class="btn-outline"/>
+<text x="215" y="800" text-anchor="middle" class="btn-outline-text">Share my results</text>
+<text x="215" y="828" text-anchor="middle" class="link">Rate another bundle</text>
+
+<!-- callouts -->
+<circle cx="400" cy="100" r="10" class="callout"/><text x="400" y="104" text-anchor="middle" class="callouttext">1</text>
+<line x1="390" y1="100" x2="330" y2="100" class="leader"/>
+
+<circle cx="400" cy="230" r="10" class="callout"/><text x="400" y="234" text-anchor="middle" class="callouttext">2</text>
+<line x1="390" y1="230" x2="396" y2="230" class="leader"/>
+
+<circle cx="400" cy="694" r="10" class="callout"/><text x="400" y="698" text-anchor="middle" class="callouttext">3</text>
+<line x1="390" y1="694" x2="330" y2="694" class="leader"/>
+
+<circle cx="400" cy="828" r="10" class="callout"/><text x="400" y="832" text-anchor="middle" class="callouttext">4</text>
+<line x1="390" y1="828" x2="330" y2="828" class="leader"/>
+
+<!-- legend -->
+<text x="40" y="880" class="legend-title">Concept C — Domain gauge card grid</text>
+<line x1="40" y1="892" x2="580" y2="892" stroke="#D3D1C7" stroke-width="1"/>
+
+<text x="40" y="918" class="legend-num">1</text>
+<text x="60" y="918" class="legend-text">Archetype header — identical role/source to 05a/05b.</text>
+
+<text x="40" y="944" class="legend-num">2</text>
+<text x="60" y="944" class="legend-text">Domain gauge card — 2-column responsive grid, one card per domain: mini semicircle gauge (needle position = domain average), numeric value, plain-language lean chip. New domains simply add more cards; grid reflows, no redesign.</text>
+
+<text x="40" y="970" class="legend-num">3</text>
+<text x="60" y="970" class="legend-text">Card tap target — expands to on-demand individual use-case ratings for that domain (same on-demand behavior as 05a/05b).</text>
+
+<text x="40" y="996" class="legend-num">4</text>
+<text x="60" y="996" class="legend-text">"Rate another bundle" — low-emphasis text link, the continue-rating path that previously lived on a separate bundle-complete decision screen. Routes back into Feature 1 for a new randomized 10-use-case bundle.</text>
+
+<text x="40" y="1028" class="legend-text" font-style="italic">Pros: most scannable at high domain counts (grid wraps/scrolls instead of degrading like a radar chart), each domain gets equal visual weight, gauges are a familiar "dial" metaphor. Cons: no single unified "shape" for the whole profile — reads as a dashboard of parts rather than one portrait, weakest of the three for the "legible at a glance" acceptance criterion.</text>
+<text x="40" y="1054" class="legend-text" font-style="italic">Recommendation for v1: 05a (radar) best satisfies "readable with minimal explanation copy" for the 5-8 launch domains; revisit if the domain count grows past ~10.</text>
+</svg>

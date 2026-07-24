@@ -1,0 +1,199 @@
+<svg viewBox="0 0 900 1300" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wireframe: Individual results — concept B, per-domain spectrum bars</title>
+<desc>Mid-fi annotated wireframe for Feature 2. Concept B: a "Human ↔ AI" horizontal spectrum track per domain, plus an Archetype Card (shared component with 02-landing-shared-link.svg) whose copy and computation come from docs/archetype-logic.md.</desc>
+<style>
+.frame { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.box { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.dynamicbox { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.ximg { fill:#F6F5F1; stroke:#B9B7AC; stroke-width:1.5; }
+.ximgline { stroke:#B9B7AC; stroke-width:1.5; }
+.wavy-sm { font-size:13px; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:-2px; }
+.label { font-size:11.5px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.endlabel { font-size:9.5px; font-weight:700; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:0.4px; }
+.title { font-size:13px; font-weight:600; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.archlabel { font-size:9.5px; font-weight:700; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:0.5px; }
+.archname { font-size:16px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.track { stroke:#D3D1C7; stroke-width:3; stroke-linecap:round; }
+.tick { stroke:#D3D1C7; stroke-width:1.5; }
+.marker { fill:#2C2C2A; }
+.btn { fill:#2C2C2A; }
+.btntext { fill:#FFFFFF; font-size:14px; font-weight:600; font-family: Arial, sans-serif; }
+.btn-outline { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:1.5; }
+.btn-outline-text { fill:#2C2C2A; font-size:12.5px; font-weight:600; font-family: Arial, sans-serif; }
+.impacticon { fill:#FFFFFF; fill-opacity:0.15; }
+.impacticontext { fill:#FFFFFF; font-size:13px; font-weight:700; font-family: Arial, sans-serif; }
+.impactsub { fill:#B9B7AC; font-size:10px; font-family: Arial, sans-serif; }
+.summarybox { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.summarytext { fill:#3A3A38; font-size:11.5px; font-family: Arial, sans-serif; font-style:italic; }
+.shimmer { fill:#EDEBE3; }
+.state-title { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.callout { fill:#2C2C2A; }
+.callouttext { fill:#FFFFFF; font-size:11px; font-weight:700; font-family: Arial, sans-serif; }
+.leader { stroke:#B9B7AC; stroke-width:1; stroke-dasharray:2,2; }
+.legend-title { font-size:13px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.legend-text { font-size:12px; fill:#3A3A38; font-family: Arial, sans-serif; }
+.legend-num { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+</style>
+
+<!-- ============ MAIN: populated state ============ -->
+<rect x="40" y="40" width="350" height="840" rx="26" class="frame"/>
+
+<!-- Archetype Card component (shared w/ 02-landing-shared-link.svg) -->
+<rect x="66" y="72" width="298" height="150" rx="8" class="dynamicbox"/>
+<rect x="82" y="90" width="60" height="60" rx="10" class="ximg"/>
+<line x1="82" y1="90" x2="142" y2="150" class="ximgline"/>
+<line x1="142" y1="90" x2="82" y2="150" class="ximgline"/>
+<text x="154" y="106" class="archlabel">YOUR ARCHETYPE</text>
+<text x="154" y="130" class="archname">THE BACKSEAT DRIVER</text>
+<text x="82" y="172" class="wavy-sm">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="82" y="192" class="wavy-sm">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="82" y="210" class="label" font-style="italic">computed from your ratings so far</text>
+
+<text x="66" y="252" class="label">Your ratings by domain</text>
+
+<!-- row 1: Creative — shown tapped/expanded, with one-line summary -->
+<g>
+<text x="66" y="280" class="title" font-size="12">Creative</text>
+<text x="66" y="297" class="endlabel">HUMAN</text>
+<text x="364" y="297" text-anchor="end" class="endlabel">AI</text>
+<line x1="66" y1="306" x2="364" y2="306" class="track"/>
+<line x1="66" y1="300" x2="66" y2="312" class="tick"/>
+<line x1="140.5" y1="300" x2="140.5" y2="312" class="tick"/>
+<line x1="215" y1="300" x2="215" y2="312" class="tick"/>
+<line x1="289.5" y1="300" x2="289.5" y2="312" class="tick"/>
+<line x1="364" y1="300" x2="364" y2="312" class="tick"/>
+<circle cx="245" cy="306" r="9" class="marker"/>
+</g>
+<rect x="66" y="320" width="298" height="40" rx="6" class="summarybox"/>
+<text x="82" y="336" class="summarytext">"You lean AI here — especially generative</text>
+<text x="82" y="351" class="summarytext">art and writing tools."</text>
+
+<g>
+<text x="66" y="392" class="title" font-size="12">Work &amp; productivity</text>
+<line x1="66" y1="418" x2="364" y2="418" class="track"/>
+<line x1="66" y1="412" x2="66" y2="424" class="tick"/>
+<line x1="140.5" y1="412" x2="140.5" y2="424" class="tick"/>
+<line x1="215" y1="412" x2="215" y2="424" class="tick"/>
+<line x1="289.5" y1="412" x2="289.5" y2="424" class="tick"/>
+<line x1="364" y1="412" x2="364" y2="424" class="tick"/>
+<circle cx="125" cy="418" r="9" class="marker"/>
+</g>
+
+<g>
+<text x="66" y="460" class="title" font-size="12">Health</text>
+<line x1="66" y1="486" x2="364" y2="486" class="track"/>
+<line x1="66" y1="480" x2="66" y2="492" class="tick"/>
+<line x1="140.5" y1="480" x2="140.5" y2="492" class="tick"/>
+<line x1="215" y1="480" x2="215" y2="492" class="tick"/>
+<line x1="289.5" y1="480" x2="289.5" y2="492" class="tick"/>
+<line x1="364" y1="480" x2="364" y2="492" class="tick"/>
+<circle cx="215" cy="486" r="9" class="marker"/>
+</g>
+
+<g>
+<text x="66" y="528" class="title" font-size="12">Home</text>
+<line x1="66" y1="554" x2="364" y2="554" class="track"/>
+<line x1="66" y1="548" x2="66" y2="560" class="tick"/>
+<line x1="140.5" y1="548" x2="140.5" y2="560" class="tick"/>
+<line x1="215" y1="548" x2="215" y2="560" class="tick"/>
+<line x1="289.5" y1="548" x2="289.5" y2="560" class="tick"/>
+<line x1="364" y1="548" x2="364" y2="560" class="tick"/>
+<circle cx="300" cy="554" r="9" class="marker"/>
+</g>
+
+<g>
+<text x="66" y="596" class="title" font-size="12">Relationships</text>
+<line x1="66" y1="622" x2="364" y2="622" class="track"/>
+<line x1="66" y1="616" x2="66" y2="628" class="tick"/>
+<line x1="140.5" y1="616" x2="140.5" y2="628" class="tick"/>
+<line x1="215" y1="616" x2="215" y2="628" class="tick"/>
+<line x1="289.5" y1="616" x2="289.5" y2="628" class="tick"/>
+<line x1="364" y1="616" x2="364" y2="628" class="tick"/>
+<circle cx="95" cy="622" r="9" class="marker"/>
+</g>
+
+<text x="66" y="654" class="label" font-style="italic">Tap any row for a one-line summary</text>
+
+<!-- prominent CTA: AI impact explainer (Feature 5, P1) -->
+<rect x="66" y="672" width="298" height="58" rx="8" class="btn"/>
+<circle cx="100" cy="701" r="16" class="impacticon"/>
+<text x="100" y="706" text-anchor="middle" class="impacticontext">i</text>
+<text x="126" y="696" class="btntext" font-size="13.5">Learn more about AI's impact →</text>
+<text x="126" y="714" class="impactsub">Jobs · Economy · Health · Industry</text>
+
+<!-- CTAs: one primary, two secondary side by side -->
+<rect x="66" y="746" width="298" height="50" rx="6" class="btn"/>
+<text x="215" y="776" text-anchor="middle" class="btntext">See how you compare →</text>
+
+<rect x="66" y="806" width="143" height="44" rx="6" class="btn-outline"/>
+<text x="137.5" y="833" text-anchor="middle" class="btn-outline-text">Share my results</text>
+<rect x="221" y="806" width="143" height="44" rx="6" class="btn-outline"/>
+<text x="292.5" y="833" text-anchor="middle" class="btn-outline-text">Rate more use cases</text>
+
+<!-- callouts -->
+<circle cx="400" cy="140" r="10" class="callout"/><text x="400" y="144" text-anchor="middle" class="callouttext">1</text>
+<line x1="390" y1="140" x2="364" y2="140" class="leader"/>
+
+<circle cx="400" cy="306" r="10" class="callout"/><text x="400" y="310" text-anchor="middle" class="callouttext">2</text>
+<line x1="390" y1="306" x2="364" y2="306" class="leader"/>
+
+<circle cx="400" cy="340" r="10" class="callout"/><text x="400" y="344" text-anchor="middle" class="callouttext">3</text>
+<line x1="390" y1="340" x2="364" y2="340" class="leader"/>
+
+<circle cx="400" cy="654" r="10" class="callout"/><text x="400" y="658" text-anchor="middle" class="callouttext">4</text>
+<line x1="390" y1="654" x2="330" y2="654" class="leader"/>
+
+<circle cx="400" cy="701" r="10" class="callout"/><text x="400" y="705" text-anchor="middle" class="callouttext">5</text>
+<line x1="390" y1="701" x2="364" y2="701" class="leader"/>
+
+<circle cx="400" cy="771" r="10" class="callout"/><text x="400" y="775" text-anchor="middle" class="callouttext">6</text>
+<line x1="390" y1="771" x2="364" y2="771" class="leader"/>
+
+<circle cx="400" cy="828" r="10" class="callout"/><text x="400" y="832" text-anchor="middle" class="callouttext">7</text>
+<line x1="390" y1="828" x2="364" y2="828" class="leader"/>
+
+<!-- ============ small state: skeleton / computing ============ -->
+<text x="452" y="60" class="state-title">State: computing archetype (&lt;2s)</text>
+<rect x="452" y="72" width="200" height="150" rx="16" class="frame"/>
+<rect x="468" y="90" width="60" height="60" rx="10" class="shimmer"/>
+<rect x="540" y="98" width="90" height="10" rx="5" class="shimmer"/>
+<rect x="540" y="116" width="70" height="14" rx="4" class="shimmer"/>
+<rect x="468" y="164" width="164" height="9" rx="4" class="shimmer"/>
+<rect x="468" y="182" width="120" height="9" rx="4" class="shimmer"/>
+<text x="452" y="242" class="label" font-size="10">Shimmer placeholder matches the</text>
+<text x="452" y="256" class="label" font-size="10">Archetype Card's exact shape —</text>
+<text x="452" y="270" class="label" font-size="10">icon block + two text-line blocks —</text>
+<text x="452" y="284" class="label" font-size="10">so the layout doesn't jump when</text>
+<text x="452" y="298" class="label" font-size="10">real content resolves (must be &lt;2s</text>
+<text x="452" y="312" class="label" font-size="10">per PRD Requirement 2).</text>
+
+<!-- legend -->
+<text x="40" y="920" class="legend-title">Concept B — Per-domain spectrum bars</text>
+<line x1="40" y1="932" x2="860" y2="932" stroke="#D3D1C7" stroke-width="1"/>
+
+<text x="40" y="958" class="legend-num">1</text>
+<text x="60" y="958" class="legend-text">Archetype Card — the same component as 02-landing-shared-link.svg's sharer preview, here labeled "YOUR ARCHETYPE." Name + one-line summary copy are pulled verbatim from the matching row in docs/archetype-logic.md's 22-archetype table (CMS/config-authored, not generated per visitor) — e.g. "The Backseat Driver" / "Getting around is the one place you still want a human hand on the wheel."</text>
+
+<text x="40" y="1000" class="legend-num">1a</text>
+<text x="72" y="1000" class="legend-text">Computation (server-side, per archetype-logic.md): only domains with ≥2 ratings count as "confident." &lt;2 confident domains → The Blank Slate. Otherwise compute the visitor's own baseline (equal-weighted mean of confident domains' averages), then each confident domain's deviation from that baseline. If the largest |deviation| is below the standout threshold → The Even Keel. Otherwise the domain with the largest |deviation| (ties go to the domain with more ratings) sets the archetype — warm name if deviation &gt; 0, cool name if &lt; 0.</text>
+
+<text x="40" y="1052" class="legend-num">2</text>
+<text x="60" y="1052" class="legend-text">Domain spectrum track — marker position only now; the numeric average is no longer printed inside the marker (see 3 for where the number still lives). Rows are sorted by domain and simply grow as domains are added.</text>
+
+<text x="40" y="1078" class="legend-num">3</text>
+<text x="60" y="1078" class="legend-text">Tap-to-expand summary — replaces the earlier per-use-case breakdown with a single plain-language insight sentence for that domain (editorial/templated copy, e.g. "You lean AI here — especially generative art and writing tools."). Full use-case-level detail is intentionally not shown here — too much information for this view.</text>
+
+<text x="40" y="1104" class="legend-num">4</text>
+<text x="60" y="1104" class="legend-text">Tap hint — reworded to match the summary behavior in 3, not "individual use-case ratings."</text>
+
+<text x="40" y="1130" class="legend-num">5</text>
+<text x="60" y="1130" class="legend-text">"Learn more about AI's impact" — prominent CTA into the P1 Impact Explainer (PRD Requirement 5: jobs/labor, economy, health, industry consequence cards). Given full-width primary-button weight, same as "See how you compare," since it's being surfaced deliberately, not as an afterthought. Placed after the rating content and before the compare/share actions — never before rating, per the PRD's no-priming rule. This is an entry point only; the explainer screen itself isn't wireframed here.</text>
+
+<text x="40" y="1172" class="legend-num">6</text>
+<text x="60" y="1172" class="legend-text">Primary CTA "See how you compare" — routes to the friend/aggregate comparison screen (see 06-comparison-spectrum.svg).</text>
+
+<text x="40" y="1198" class="legend-num">7</text>
+<text x="60" y="1198" class="legend-text">Two secondary actions side by side beneath the primary CTA — "Share my results" (see 07-share-results.svg for the share flow this opens) and "Rate more use cases" — replacing the earlier single low-emphasis text link. Equal visual weight, since neither is more likely than the other to be what a visitor wants next.</text>
+
+<text x="40" y="1230" class="legend-text" font-style="italic">Pros: reads clearly at any domain count (scrollable list vs. a chart that gets crowded), directly literalizes the "human vs AI" framing from the rating scale itself, easy to scan for outliers. Cons: no single-glance "shape" of the whole profile the way a radar chart gives; feels more like a report than a portrait.</text>
+</svg>

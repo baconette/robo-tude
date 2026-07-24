@@ -1,0 +1,125 @@
+<svg viewBox="0 0 620 1220" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wireframe: Landing screen — visitor arriving via shared link</title>
+<desc>Mid-fi annotated wireframe. Leads with the sharer's archetype card (no name/photo — anonymous by default) and an empty-state spectrum teaser, per PRD user story "visitor arriving via a shared link", flow-rating-module.svg's shared-link branch, and docs/archetype-logic.md's scoring model.</desc>
+<style>
+.frame { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.box { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.dynamicbox { fill:#F1EFE8; stroke:#D3D1C7; stroke-width:1.5; }
+.ximg { fill:#F6F5F1; stroke:#B9B7AC; stroke-width:1.5; }
+.ximgline { stroke:#B9B7AC; stroke-width:1.5; }
+.wavy-h1 { font-size:26px; fill:#2C2C2A; font-family: Arial, sans-serif; letter-spacing:-3px; }
+.wavy-body { font-size:15px; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:-2px; }
+.wavy-sm { font-size:13px; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:-2px; }
+.label { font-size:11.5px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.title { font-size:13px; font-weight:600; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.btn { fill:#2C2C2A; }
+.btntext { fill:#FFFFFF; font-size:16px; font-weight:600; font-family: Arial, sans-serif; }
+.archlabel { font-size:9.5px; font-weight:700; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:0.5px; }
+.archname { font-size:16px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.domainbadge { fill:#FFFFFF; stroke:#B9B7AC; stroke-width:1; }
+.domainbadgetext { fill:#5F5E5A; font-size:9px; font-weight:700; font-family: Arial, sans-serif; letter-spacing:0.4px; }
+.track { stroke:#D3D1C7; stroke-width:3; stroke-linecap:round; }
+.marker { fill:#2C2C2A; }
+.markerempty { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:1.5; stroke-dasharray:2,2; }
+.callout { fill:#2C2C2A; }
+.callouttext { fill:#FFFFFF; font-size:11px; font-weight:700; font-family: Arial, sans-serif; }
+.leader { stroke:#B9B7AC; stroke-width:1; stroke-dasharray:2,2; }
+.legend-title { font-size:13px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.legend-text { font-size:12px; fill:#3A3A38; font-family: Arial, sans-serif; }
+.legend-num { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+</style>
+
+<rect x="40" y="40" width="350" height="860" rx="26" class="frame"/>
+
+<text x="66" y="82" class="title">robo-tude</text>
+<line x1="66" y1="98" x2="364" y2="98" stroke="#EDEBE3" stroke-width="1"/>
+
+<!-- Archetype Card component (shared w/ 05b-results-spectrum.svg's own-results header) -->
+<rect x="66" y="116" width="298" height="150" rx="8" class="dynamicbox"/>
+<rect x="82" y="134" width="60" height="60" rx="10" class="ximg"/>
+<line x1="82" y1="134" x2="142" y2="194" class="ximgline"/>
+<line x1="142" y1="134" x2="82" y2="194" class="ximgline"/>
+<text x="154" y="150" class="archlabel">YOUR FRIEND'S ARCHETYPE</text>
+<text x="154" y="174" class="archname">THE BACKSEAT DRIVER</text>
+<text x="82" y="216" class="wavy-sm">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="82" y="236" class="wavy-sm">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="82" y="254" class="label" font-style="italic">from robo-tude</text>
+
+<!-- empty-state spectrum teaser: friend's marker only, visitor's slot open -->
+<text x="66" y="298" class="label">A few of your friend's domains</text>
+
+<rect x="66" y="308" width="78" height="18" rx="9" class="domainbadge"/>
+<text x="105" y="320" text-anchor="middle" class="domainbadgetext">MOBILITY</text>
+<line x1="66" y1="342" x2="364" y2="342" class="track"/>
+<circle cx="248" cy="342" r="8" class="marker"/>
+<circle cx="140" cy="342" r="8" class="markerempty"/>
+
+<rect x="66" y="360" width="70" height="18" rx="9" class="domainbadge"/>
+<text x="101" y="372" text-anchor="middle" class="domainbadgetext">HEALTH</text>
+<line x1="66" y1="394" x2="364" y2="394" class="track"/>
+<circle cx="118" cy="394" r="8" class="marker"/>
+<circle cx="290" cy="394" r="8" class="markerempty"/>
+
+<rect x="66" y="412" width="60" height="18" rx="9" class="domainbadge"/>
+<text x="96" y="424" text-anchor="middle" class="domainbadgetext">HOME</text>
+<line x1="66" y1="446" x2="364" y2="446" class="track"/>
+<circle cx="305" cy="446" r="8" class="marker"/>
+<circle cx="95" cy="446" r="8" class="markerempty"/>
+
+<text x="66" y="476" class="label" font-style="italic">Rate your own to drop your marker on each spectrum</text>
+
+<!-- H1 -->
+<text x="66" y="522" class="wavy-h1">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="66" y="552" class="wavy-h1">∿∿∿∿∿∿∿∿∿∿</text>
+
+<!-- subhead -->
+<text x="66" y="586" class="wavy-body">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="66" y="608" class="wavy-body">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+
+<!-- CTA -->
+<rect x="66" y="638" width="298" height="54" rx="6" class="btn"/>
+<text x="215" y="671" text-anchor="middle" class="btntext">Start rating</text>
+<text x="215" y="712" text-anchor="middle" class="label">Takes ~5 min · No sign-up needed</text>
+
+<!-- generic fallback note -->
+<rect x="66" y="742" width="298" height="46" class="box" stroke-dasharray="4,3"/>
+<text x="215" y="761" text-anchor="middle" class="label">Fallback if link expired/invalid:</text>
+<text x="215" y="777" text-anchor="middle" class="label">shows the generic organic landing (screen 1)</text>
+
+<!-- callouts -->
+<circle cx="400" cy="190" r="10" class="callout"/><text x="400" y="194" text-anchor="middle" class="callouttext">1</text>
+<line x1="390" y1="190" x2="364" y2="190" class="leader"/>
+
+<circle cx="400" cy="342" r="10" class="callout"/><text x="400" y="346" text-anchor="middle" class="callouttext">2</text>
+<line x1="390" y1="342" x2="364" y2="342" class="leader"/>
+
+<circle cx="400" cy="536" r="10" class="callout"/><text x="400" y="540" text-anchor="middle" class="callouttext">3</text>
+<line x1="390" y1="536" x2="330" y2="536" class="leader"/>
+
+<circle cx="400" cy="665" r="10" class="callout"/><text x="400" y="669" text-anchor="middle" class="callouttext">4</text>
+<line x1="390" y1="665" x2="364" y2="665" class="leader"/>
+
+<circle cx="400" cy="765" r="10" class="callout"/><text x="400" y="769" text-anchor="middle" class="callouttext">5</text>
+<line x1="390" y1="765" x2="364" y2="765" class="leader"/>
+
+<!-- legend -->
+<text x="40" y="940" class="legend-title">Annotations</text>
+<line x1="40" y1="952" x2="580" y2="952" stroke="#D3D1C7" stroke-width="1"/>
+
+<text x="40" y="978" class="legend-num">1</text>
+<text x="60" y="978" class="legend-text">Archetype Card — dynamic, driven by the shared URL token. Icon is a CMS-provided illustration keyed to the archetype (one of the 22 in docs/archetype-logic.md), never a personal photo — visitors are anonymous, no photo exists to show. Label and name copy come from that archetype's row in the CMS/config (name + "Summary copy" column), computed server-side per archetype-logic.md's scoring model from the sharer's own ratings. Never renders the sharer's real name — copy says "your friend's," not "[Name]'s" (no names are collected, PRD Non-Goal #4). Same component reuses on 05b-results-spectrum.svg for the visitor's own archetype.</text>
+
+<text x="40" y="1030" class="legend-num">2</text>
+<text x="60" y="1030" class="legend-text">Empty-state spectrum teaser — 2-3 sample domain tracks from the sharer's real ratings (solid marker), each paired with a dashed, unfilled marker showing where the new visitor's own rating will land once they rate. "Empty" refers to that open visitor slot, not placeholder data — it's the hook that motivates starting. Same track/marker visual language as the results screen (05b) and the full comparison screen (06), just abbreviated to a few domains here.</text>
+
+<text x="40" y="1082" class="legend-num">3</text>
+<text x="60" y="1082" class="legend-text">H1 — reframed for this arrival type, e.g. "See how your AI attitudes compare to your friend's." Always "your friend's," never a name or pronoun, regardless of the sharer's actual identity.</text>
+
+<text x="40" y="1108" class="legend-num">4</text>
+<text x="60" y="1108" class="legend-text">Primary CTA — identical destination/behavior to screen 1 (Start rating → Feature 1). The sharer's token is carried forward so the eventual comparison screen (06-comparison-spectrum.svg) can render both spectrums together.</text>
+
+<text x="40" y="1134" class="legend-num">5</text>
+<text x="60" y="1134" class="legend-text">Error/edge state: expired or malformed share token — do not block entry, silently fall back to the generic first-time landing (screen 1) rather than showing a dead end.</text>
+
+<text x="40" y="1166" class="legend-text" font-style="italic">Responsive: same two-column promotion as screen 1, with the Archetype Card and spectrum teaser pinned to the top of the left column. Accessibility: archetype icon alt text describes the archetype name, not a person ("The Backseat Driver icon"), since it is illustrative, not a photo.</text>
+</svg>

@@ -1,0 +1,98 @@
+<svg viewBox="0 0 620 1160" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wireframe: Landing screen — first-time / organic visitor</title>
+<desc>Mid-fi annotated wireframe. Mobile breakpoint (390px content frame). Explains the concept in under 10 seconds and offers a primary CTA into the rating module, per PRD Requirement 1 and the arrival-type decision in flow-rating-module.svg.</desc>
+<style>
+.frame { fill:#FFFFFF; stroke:#2C2C2A; stroke-width:2; }
+.box { fill:#FFFFFF; stroke:#D3D1C7; stroke-width:1.5; }
+.ximg { fill:#F6F5F1; stroke:#B9B7AC; stroke-width:1.5; }
+.ximgline { stroke:#B9B7AC; stroke-width:1.5; }
+.wavy-h1 { font-size:28px; fill:#2C2C2A; font-family: Arial, sans-serif; letter-spacing:-3px; }
+.wavy-body { font-size:15px; fill:#8C8A82; font-family: Arial, sans-serif; letter-spacing:-2px; }
+.label { font-size:11.5px; fill:#5F5E5A; font-family: Arial, sans-serif; }
+.title { font-size:13px; font-weight:600; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.btn { fill:#2C2C2A; }
+.btntext { fill:#FFFFFF; font-size:16px; font-weight:600; font-family: Arial, sans-serif; }
+.link { fill:#2C2C2A; font-size:12px; font-weight:600; font-family: Arial, sans-serif; text-decoration:underline; }
+.link-secondary { fill:#5F5E5A; font-size:12.5px; font-family: Arial, sans-serif; text-decoration:underline; }
+.callout { fill:#2C2C2A; }
+.callouttext { fill:#FFFFFF; font-size:11px; font-weight:700; font-family: Arial, sans-serif; }
+.leader { stroke:#B9B7AC; stroke-width:1; stroke-dasharray:2,2; }
+.legend-title { font-size:13px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+.legend-text { font-size:12px; fill:#3A3A38; font-family: Arial, sans-serif; }
+.legend-num { font-size:12px; font-weight:700; fill:#2C2C2A; font-family: Arial, sans-serif; }
+</style>
+
+<!-- phone frame -->
+<rect x="40" y="40" width="350" height="820" rx="26" class="frame"/>
+
+<!-- header -->
+<text x="66" y="82" class="title">robo-tude</text>
+<line x1="66" y1="98" x2="364" y2="98" stroke="#EDEBE3" stroke-width="1"/>
+
+<!-- hero image -->
+<rect x="66" y="118" width="298" height="168" class="ximg"/>
+<line x1="66" y1="118" x2="364" y2="286" class="ximgline"/>
+<line x1="364" y1="118" x2="66" y2="286" class="ximgline"/>
+
+<!-- H1 -->
+<text x="66" y="330" class="wavy-h1">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="66" y="362" class="wavy-h1">∿∿∿∿∿∿∿∿∿</text>
+
+<!-- subhead -->
+<text x="66" y="398" class="wavy-body">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="66" y="420" class="wavy-body">∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿</text>
+<text x="66" y="442" class="wavy-body">∿∿∿∿∿∿∿∿∿∿∿</text>
+
+<!-- microcopy, now above CTA -->
+<text x="215" y="462" text-anchor="middle" class="label">Takes ~5 min · No sign-up needed</text>
+
+<!-- CTA -->
+<rect x="66" y="478" width="298" height="54" rx="6" class="btn"/>
+<text x="215" y="511" text-anchor="middle" class="btntext">Start rating</text>
+
+<!-- secondary: enter a code, now below CTA -->
+<text x="215" y="558" text-anchor="middle" class="link-secondary">Have a code from a friend? Enter it →</text>
+
+<!-- callouts -->
+<circle cx="400" cy="200" r="10" class="callout"/><text x="400" y="204" text-anchor="middle" class="callouttext">5</text>
+<line x1="390" y1="200" x2="364" y2="200" class="leader"/>
+
+<circle cx="400" cy="330" r="10" class="callout"/><text x="400" y="334" text-anchor="middle" class="callouttext">1</text>
+<line x1="390" y1="330" x2="330" y2="330" class="leader"/>
+
+<circle cx="400" cy="415" r="10" class="callout"/><text x="400" y="419" text-anchor="middle" class="callouttext">2</text>
+<line x1="390" y1="415" x2="330" y2="415" class="leader"/>
+
+<circle cx="400" cy="462" r="10" class="callout"/><text x="400" y="466" text-anchor="middle" class="callouttext">3</text>
+<line x1="390" y1="462" x2="330" y2="462" class="leader"/>
+
+<circle cx="400" cy="505" r="10" class="callout"/><text x="400" y="509" text-anchor="middle" class="callouttext">4</text>
+<line x1="390" y1="505" x2="364" y2="505" class="leader"/>
+
+<circle cx="400" cy="558" r="10" class="callout"/><text x="400" y="562" text-anchor="middle" class="callouttext">6</text>
+<line x1="390" y1="558" x2="330" y2="558" class="leader"/>
+
+<!-- legend -->
+<text x="40" y="920" class="legend-title">Annotations</text>
+<line x1="40" y1="932" x2="580" y2="932" stroke="#D3D1C7" stroke-width="1"/>
+
+<text x="40" y="958" class="legend-num">1</text>
+<text x="60" y="958" class="legend-text">H1 headline — priority 1, first content to render. Static/CMS copy. ≤50 chars. Communicates the core question ("should a human or an AI do this?") for the &lt;10s comprehension goal.</text>
+
+<text x="40" y="984" class="legend-num">2</text>
+<text x="60" y="984" class="legend-text">Subhead — priority 2. Static/CMS copy, 2-3 short sentences, jargon-free, sets expectation (no sign-up, ~5 min, anonymous).</text>
+
+<text x="40" y="1010" class="legend-num">3</text>
+<text x="60" y="1010" class="legend-text">Microcopy — now placed above the CTA so it's read as a expectation-setter right before the tap, not a trailing afterthought below it. Sets expectation, reduces bounce risk; static copy, not a tap target.</text>
+
+<text x="40" y="1036" class="legend-num">4</text>
+<text x="60" y="1036" class="legend-text">Primary CTA "Start rating" — priority high. On click, routes into Feature 1 rating module; first-time visitors get the 10 featured use cases (2 per domain × 5 domains). Tap target ≥48px height.</text>
+
+<text x="40" y="1062" class="legend-num">5</text>
+<text x="60" y="1062" class="legend-text">Hero image — priority 4 (can lazy-load after text). Decorative illustration, alt="" if purely decorative. Aspect ~16:9.</text>
+
+<text x="40" y="1088" class="legend-num">6</text>
+<text x="60" y="1088" class="legend-text">"Enter a code" — demoted from a header link to a secondary text link below the primary CTA, so it reads as the fallback path it is rather than competing with "Start rating" for attention. Routes to the comparison flow (Feature 3 — see 06-comparison-spectrum.svg) rather than the rating module.</text>
+
+<text x="40" y="1120" class="legend-text" font-style="italic">Responsive: ≥768px promotes to a two-column layout (copy + CTA left, hero image right, image not full-bleed). Accessibility: header/hero decorative; all interactive elements keyboard-reachable in DOM order.</text>
+</svg>
