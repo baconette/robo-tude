@@ -1,0 +1,8 @@
+{
+  "name": "Rating → Results Flow",
+  "description": "Clickable walkthrough of PRD P0 Features 1-4: landing, use-case rating, individual results (archetype + spectrum), friend comparison, and share sheet. Built from wireframes-v01 and archetype-logic.md.",
+  "tags": ["p0", "rating", "results", "comparison", "share"],
+  "options": [
+    { "file": "flow.html", "label": "Full flow", "description": "Landing → rating → results → compare → share" }
+  ]
+}
